@@ -984,6 +984,39 @@ body.layout-minimal .content-grid {
 }
 
 
+
+.watermarked-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.watermarked-image img{
+    display:block;
+    width:100%;
+}
+
+.watermarked-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:url("/images/starwm.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:65%;
+
+    opacity:1;
+
+    pointer-events:none;
+    z-index:2;
+}
+
+.nsfw-overlay{
+    z-index:3;
+}
+
+
 .creator-profile-card{
     width:90%;
     max-width:1000px;
@@ -994,11 +1027,11 @@ body.layout-minimal .content-grid {
     gap:30px;
     align-items:center;
 
-    background:rgba(36,24,44,.85);
-    border:1px solid rgba(185,155,215,.12);
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(255,255,255,.75);
     border-radius:35px;
     backdrop-filter:blur(18px);
-    box-shadow:0 0 25px rgba(0,0,0,.45);
+    box-shadow:0 15px 35px rgba(120,90,150,.12);
 }
 
 .creator-avatar-wrap{
@@ -1011,14 +1044,12 @@ body.layout-minimal .content-grid {
     height:165px;
     object-fit:cover;
     border-radius:50%;
-    border:6px solid #d6a0cc;
-    box-shadow:
-        0 0 20px rgba(214,160,204,.25),
-        0 0 40px rgba(0,0,0,.4);
+    border:6px solid #ffd6f4;
+    box-shadow:0 0 25px rgba(255,160,215,.35);
 }
 
 .creator-kicker{
-    color:#f0d7eb;
+    color:#ff8fcf;
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:.08em;
@@ -1026,13 +1057,13 @@ body.layout-minimal .content-grid {
 }
 
 .creator-profile-info h2{
-    color:#e6bfdc;
+    color:#ff8fcf;
     font-size:2.4rem;
     margin-bottom:12px;
 }
 
 .creator-bio{
-    color:#c9bdd6;
+    color:#6d5b82;
     font-size:1.05rem;
     line-height:1.8;
     margin-bottom:18px;
@@ -1048,9 +1079,8 @@ body.layout-minimal .content-grid {
 .creator-pills span{
     padding:8px 14px;
     border-radius:999px;
-    background:rgba(118,64,106,.35);
-    color:#f0d7eb;
-    border:1px solid rgba(185,155,215,.14);
+    background:#ffe4f5;
+    color:#8b5d9b;
     font-weight:700;
     font-size:.9rem;
 }
@@ -1065,16 +1095,15 @@ body.layout-minimal .content-grid {
 .creator-mini-grid div{
     padding:16px;
     border-radius:22px;
-    background:rgba(52,34,63,.65);
-    border:1px solid rgba(185,155,215,.10);
+    background:rgba(255,255,255,.55);
 }
 
 .creator-mini-grid strong{
-    color:#e6bfdc;
+    color:#ff8fcf;
 }
 
 .creator-mini-grid p{
-    color:#c9bdd6;
+    color:#6d5b82;
     margin-top:5px;
     line-height:1.5;
 }
@@ -1097,4 +1126,56 @@ body.layout-minimal .content-grid {
     .creator-mini-grid{
         grid-template-columns:1fr;
     }
+}
+
+.lightbox{
+    position:fixed;
+}
+
+.lightbox::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:url("/images/starwm");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:50%;
+
+    opacity:.12;
+    pointer-events:none;
+    z-index:1002;
+}
+
+#lightboxImage{
+    position:relative;
+    z-index:1001;
+}
+
+
+.lightbox-image-wrap{
+    position:relative;
+    display:inline-block;
+    max-width:90vw;
+    max-height:90vh;
+}
+
+.lightbox-image-wrap #lightboxImage{
+    display:block;
+    max-width:90vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+}
+
+.lightbox-watermark{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:50%;
+    max-width:500px;
+    transform:translate(-50%, -50%);
+    opacity:.12;
+    pointer-events:none;
+    z-index:5;
 }
