@@ -6,7 +6,7 @@
 
 <title>Character | Lunabrew Character Hub</title>
 
-<link rel="stylesheet" href="../style.css?v=150">
+<link rel="stylesheet" href="../style.css?v=151">
 </head>
 
 <body>
@@ -175,7 +175,7 @@
 </div>
 
 <script>
-const API_URL = "https://lunabreww.crysthigpen.workers.dev";
+const API_URL = "https://charahub.crysthigpen.workers.dev";
 const HUBS = {
     star: {
         site: "https://characterhub.pages.dev",
@@ -193,12 +193,17 @@ let allCharacters = [];
 let currentCharacter = null;
 let customCssLoaded = "";
 
-function getImage(path) {
+function getImage(path, hubKey = null) {
     if (!path) return "../images/placeholder.png";
 
     path = String(path).trim();
 
     if (path.startsWith("http")) return path;
+
+    if (hubKey && HUBS[hubKey]) {
+        return HUBS[hubKey].site + "/" + path.replace(/^\/+/, "");
+    }
+
     if (path.startsWith("/")) return window.location.origin + path;
 
     return window.location.origin + "/" + path;
@@ -449,23 +454,6 @@ function revealAllNSFW() {
     });
 }
 
-
-    function getCharacterLink(slug) {
-    if (!slug) return "";
-
-    if (slug.startsWith("star:")) {
-        return "https://characterhub.pages.dev/characters/index.html?slug=" +
-            encodeURIComponent(slug.replace("star:", ""));
-    }
-
-    if (slug.startsWith("luna:")) {
-        return "https://lunabrew.pages.dev/characters/index.html?slug=" +
-            encodeURIComponent(slug.replace("luna:", ""));
-    }
-
-    return "index.html?slug=" + encodeURIComponent(slug);
-}
-    
 async function getLinkedCharacter(relSlug) {
     if (!relSlug) return null;
 
@@ -522,16 +510,24 @@ async function renderRelationships(relationships) {
 
         const name = linkedCharacter?.name || rel.name || "Unnamed";
         const species = linkedCharacter?.species || "";
-        const icon = linkedCharacter?.icon || "";
         const type = rel.type || "Connection";
         const notes = rel.notes || "";
         const slug = rel.slug || "";
+
+        let icon = linkedCharacter?.icon || "";
+
+        if (slug.includes(":")) {
+            const [hubKey] = slug.split(":");
+            icon = getImage(icon, hubKey);
+        } else {
+            icon = getImage(icon);
+        }
 
         const card = document.createElement("div");
         card.className = "relationship-card relationship-preview-card";
 
         card.innerHTML = `
-            ${icon ? `<img src="${getImage(icon)}" alt="${name}">` : ""}
+            ${icon ? `<img src="${icon}" alt="${name}">` : ""}
             <h3>${name}</h3>
             ${species ? `<p>${species}</p>` : ""}
             <span class="relationship-type">${type}</span>
