@@ -260,7 +260,7 @@ function renderCharacters(characters) {
 searchInput.addEventListener("input", () => {
     const value = searchInput.value.toLowerCase().trim();
 
-   const asArray = value => Array.isArray(value) ? value : [];
+  const asArray = value => Array.isArray(value) ? value : [];
 
 searchInput.addEventListener("input", () => {
     const value = searchInput.value.toLowerCase().trim();
@@ -273,7 +273,6 @@ searchInput.addEventListener("input", () => {
     const filtered = allCharacters.filter(character => {
         const gender = (character.gender || "").toLowerCase();
 
-        // Prevent "male" from matching "female"
         if (value === "male" || value === "female") {
             return gender === value;
         }
