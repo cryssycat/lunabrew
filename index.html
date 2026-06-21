@@ -22,7 +22,7 @@
 
   <div class="creator-profile-info">
     <p class="creator-kicker">Creator Profile</p>
-    <h2>Hi, I’m LunaBrew!</h2>
+    <h2>Hi, I’m StarSundae!</h2>
 
     <p class="creator-bio">
       I’m a character artist, designer, storyteller, and cozy-world builder.
@@ -73,7 +73,7 @@
             🏠 Characters
         </a>
 
-        <a href="https://characterhub.pages.dev/worlds/">
+        <a href="worlds/index.html">
             🌎 Worlds
         </a>
 
@@ -97,7 +97,7 @@
 </main>
 
 <script>
-const API_URL = "https://charahub.crysthigpen.workers.dev/characters";
+const API_URL = "https://charahub.crysthigpen.workers.dev";
 
 const folderContainer = document.getElementById("folderContainer");
 const searchInput = document.getElementById("searchInput");
@@ -187,8 +187,7 @@ async function loadCharacters() {
             characterCount.textContent = "Could not count characters.";
             return;
         }
-
-  allCharacters = data.filter(character => character.hub === "LunaHub");
+allCharacters = data.filter(character => character.hub === "LunaHub");
 renderCharacters(allCharacters);
 
     } catch (error) {
