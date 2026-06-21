@@ -407,9 +407,10 @@ async function loadCharactersForWorld(world) {
       throw new Error("Characters API did not return a list.");
     }
 
-    allWorldCharacters = characters.filter(character => {
-     return characterBelongsToWorld(character, world);
-    });
+   allWorldCharacters = characters.filter(character => {
+  return characterBelongsToWorld(character, world);
+});
+ 
 
     renderWorldCharacters(allWorldCharacters);
 
