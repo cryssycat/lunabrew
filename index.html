@@ -3,370 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>World | Character Hub</title>
-<link rel="stylesheet" href="../style.css?v=210">
+
+<title>StarSundae Character Hub</title>
+
+<link rel="stylesheet" href="./style.css?v=90">
 </head>
+
 <body>
 
-<header class="world-header">
-  <a class="back-button" href="../index.html">← Back to Hub</a>
-  <div class="world-banner-wrap">
-    <img id="worldBanner" class="world-banner" src="../images/placeholder.png" alt="World banner">
+<header class="site-header">
+    <h1>⭐ StarSundae Character Hub ⭐</h1>
+    <p class="tagline">Characters, stories, and memories.</p>
+
+   <section class="creator-profile-card">
+  <div class="creator-avatar-wrap">
+    <img src="images/stsr.png" alt="StarSundae profile icon" class="creator-avatar">
   </div>
-  <div class="world-title-card">
-    <img id="worldIcon" class="world-icon" src="../images/placeholder.png" alt="World icon">
-    <div>
-      <h1 id="worldName">Loading...</h1>
-      <p id="worldShortDescription">Loading world information...</p>
+
+  <div class="creator-profile-info">
+    <p class="creator-kicker">Creator Profile</p>
+    <h2>Hi, I’m StarSundae!</h2>
+
+    <p class="creator-bio">
+      I’m a character artist, designer, storyteller, and cozy-world builder.
+      This hub is my personal archive for characters, references, galleries,
+      lore, relationships, and all the little stories I love most.
+    </p>
+
+    <div class="creator-pills">
+      <span>🎨 Artist</span>
+      <span>✨ Designer</span>
+      <span>📖 Lore Builder</span>
+      <span>🐾 Anthro Lover</span>
+      <span>☕ Cozy Vibes</span>
+      <span>🌙 Starry Worlds</span>
+    </div>
+
+    <div class="creator-mini-grid">
+      <div>
+        <strong>Favorite Themes</strong>
+        <p>Pastels, stars, moons, soft fantasy, cozy cafés</p>
+      </div>
+
+      <div>
+        <strong>Current Projects</strong>
+        <p>StarHub, LunaHub, Starbrew, character worlds</p>
+      </div>
+
+      <div>
+        <strong>Art Focus</strong>
+        <p>References, adopts, icons, outfits, lore sheets</p>
+      </div>
+
+      <div>
+        <strong>Dream</strong>
+        <p>Making warm little worlds full of characters I love</p>
+      </div>
     </div>
   </div>
+</section>
+
+    <section class="profile-card wiki-nav-card">
+
+    <h2>📚 Encyclopedia</h2>
+
+    <div class="wiki-links">
+
+        <a href="index.html">
+            🏠 Characters
+        </a>
+
+        <a href="worlds/index.html">
+            🌎 Worlds
+        </a>
+
+    
+
+    </div>
+
+</section>
+    
+    <p id="characterCount" class="character-count">Loading characters...</p>
 </header>
 
-<main class="world-page">
-  <section class="world-quick-card">
-    <div>
-      <h2>World Info</h2>
-      <p><strong>Status:</strong> <span id="worldStatus">—</span></p>
-      <p><strong>Era:</strong> <span id="worldEra">—</span></p>
-    </div>
-    <div>
-      <h3>Genre</h3>
-      <div id="worldGenre" class="tag-list"></div>
-    </div>
-    <div>
-      <h3>Theme</h3>
-      <div id="worldTheme" class="tag-list"></div>
-    </div>
-  </section>
-
-  <nav class="tabs" id="tabs">
-    <button class="tab-button active" data-tab="overview">Overview</button>
-    <button class="tab-button" data-tab="map">Map</button>
-    <button class="tab-button" data-tab="culture">Culture</button>
-    <button class="tab-button" data-tab="systems">Systems</button>
-    <button class="tab-button" data-tab="characters">Characters</button>
-    <button class="tab-button" data-tab="gallery">Gallery</button>
-    <button class="tab-button" data-tab="trivia">Trivia</button>
-  </nav>
-
-  <section id="overview" class="tab-panel active">
-    <div class="content-grid">
-      <div class="content-card wide-card"><h2>Overview</h2><p id="worldOverview">No overview yet.</p></div>
-    </div>
-  </section>
-
-  <section id="map" class="tab-panel">
-    <div class="section-title"><h2>Map</h2><p>World map, region map, or important visual guide.</p></div>
-    <div class="world-map-card"><img id="worldMap" src="../images/placeholder.png" alt="World map"></div>
-  </section>
-
-  <section id="culture" class="tab-panel">
-    <div class="content-grid">
-      <div class="content-card wide-card"><h2>Culture</h2><p id="worldCulture">No culture notes yet.</p></div>
-    </div>
-  </section>
-
-  <section id="systems" class="tab-panel">
-    <div class="content-grid">
-      <div class="content-card"><h2>Magic System</h2><p id="worldMagicSystem">—</p></div>
-      <div class="content-card"><h2>Technology</h2><p id="worldTechnology">—</p></div>
-      <div class="content-card wide-card"><h2>Economy</h2><p id="worldEconomy">—</p></div>
-    </div>
-  </section>
-
-  <section id="characters" class="tab-panel">
-    <div class="section-title"><h2>Featured Characters</h2><p>Characters associated with this world.</p></div>
-    <div id="worldCharactersGrid" class="world-character-grid"><p>No featured characters yet.</p></div>
-  </section>
-
-  <section id="gallery" class="tab-panel">
-    <div class="section-title"><h2>Gallery</h2><p>Maps, moodboards, locations, world art, and setting references.</p></div>
-    <div id="worldGalleryGrid" class="gallery-grid"><p>No world images yet.</p></div>
-  </section>
-
-  <section id="trivia" class="tab-panel">
-    <div class="content-grid">
-      <div class="content-card wide-card"><h2>Trivia</h2><p id="worldTrivia">No trivia yet.</p></div>
-    </div>
-  </section>
-
-  <div class="profile-nav"><a href="../index.html">Back to Hub</a></div>
-</main>
-
-<div id="lightbox" class="lightbox">
-  <button id="lightboxClose" class="lightbox-close">×</button>
-  <div class="lightbox-image-wrap">
-    <img id="lightboxImage" src="" alt="Full-size image">
-  </div>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search characters by name, species, folder, status, or tag...">
 </div>
 
+<main>
+    <div id="folderContainer" class="folder-container">
+        <p class="loading">Loading characters...</p>
+    </div>
+</main>
+
 <script>
-const API_URL = "https://charahub.crysthigpen.workers.dev";
-const params = new URLSearchParams(window.location.search);
-const SLUG = params.get("slug");
-let customCssLoaded = "";
+const API_URL = "https://lunabreww.crysthigpen.workers.dev";
+
+const folderContainer = document.getElementById("folderContainer");
+const searchInput = document.getElementById("searchInput");
+const characterCount = document.getElementById("characterCount");
+
+let allCharacters = [];
 
 function getImage(path) {
-  if (!path) return "../images/placeholder.png";
-  path = String(path).trim();
-  if (path.startsWith("http")) return path;
-  if (path.startsWith("/")) return window.location.origin + path;
-  return window.location.origin + "/" + path;
-}
+    if (!path) return "images/placeholder.png";
 
-function loadCustomCss(path) {
-  if (!path) return;
-  const cssPath = String(path).trim();
-  if (!cssPath) return;
-  const href = getImage(cssPath);
-  if (customCssLoaded === href) return;
-  customCssLoaded = href;
-  const oldCustom = document.getElementById("worldCustomCss");
-  if (oldCustom) oldCustom.remove();
-  const link = document.createElement("link");
-  link.id = "worldCustomCss";
-  link.rel = "stylesheet";
-  link.href = href + (href.includes("?") ? "&" : "?") + "v=" + Date.now();
-  document.head.appendChild(link);
-}
+    path = String(path).trim();
 
-function setText(id, value, fallback = "—") {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.textContent = value && String(value).trim() ? value : fallback;
-}
+    if (path.startsWith("http")) return path;
 
-function setImage(id, path) {
-  const img = document.getElementById(id);
-  if (!img) return;
-  img.src = path ? getImage(path) : "../images/placeholder.png";
-}
-
-function renderTags(id, items) {
-  const box = document.getElementById(id);
-  if (!box) return;
-  box.innerHTML = "";
-  if (!Array.isArray(items) || items.length === 0) {
-    box.innerHTML = '<span class="tag">—</span>';
-    return;
-  }
-  items.forEach(item => {
-    const span = document.createElement("span");
-    span.className = "tag";
-    span.textContent = item;
-    box.appendChild(span);
-  });
-}
-
-function normalizeImageItem(item) {
-  if (!item) return null;
-  if (typeof item === "string") return { url: item, label: "" };
-  return { url: item.url || item.src || "", label: item.label || item.type || "" };
-}
-
-function normalizeCastMember(item) {
-  if (!item) return null;
-  if (typeof item === "string") {
-    const parts = item.split("|").map(part => part.trim());
-    return { name: parts[0] || "", role: parts[1] || "Character", slug: parts[2] || parts[0] || "" };
-  }
-  return { name: item.name || "", role: item.role || item.type || "Character", slug: item.slug || "" };
-}
-
-async function fetchCharacter(slug) {
-  if (!slug) return null;
-  try {
-    const response = await fetch(`${API_URL}/character/${encodeURIComponent(slug)}`);
-    if (!response.ok) return null;
-    const character = await response.json();
-    if (character.error) return null;
-    return character;
-  } catch (err) {
-    console.error("Could not fetch cast character:", err);
-    return null;
-  }
-}
-
-function renderImages(id, images, name) {
-  const grid = document.getElementById(id);
-  if (!grid) return;
-  grid.innerHTML = "";
-  if (!Array.isArray(images) || images.length === 0) {
-    grid.innerHTML = "<p>No world images yet.</p>";
-    return;
-  }
-  images.forEach(rawItem => {
-    const item = normalizeImageItem(rawItem);
-    if (!item || !item.url) return;
-    const card = document.createElement("div");
-    card.className = "image-card";
-    const img = document.createElement("img");
-    img.src = getImage(item.url);
-    img.alt = `${name || "World"} image`;
-    img.addEventListener("click", () => openLightbox(getImage(item.url)));
-    const wrapper = document.createElement("div");
-    wrapper.className = "watermarked-image";
-    wrapper.appendChild(img);
-    card.appendChild(wrapper);
-    if (item.label) {
-      const caption = document.createElement("p");
-      caption.className = "image-title";
-      caption.textContent = item.label;
-      card.appendChild(caption);
+    if (path.startsWith("/")) {
+        return window.location.origin + path;
     }
-    grid.appendChild(card);
-  });
+
+    return window.location.origin + "/" + path;
 }
 
-async function renderWorldCharacters(cast) {
-  const grid = document.getElementById("worldCharactersGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-  if (!Array.isArray(cast) || cast.length === 0) {
-    grid.innerHTML = "<p>No featured characters yet.</p>";
-    return;
-  }
+function updateCount(showing, total) {
+    if (total === 0) {
+        characterCount.textContent = "No public characters yet.";
+        return;
+    }
 
-  for (const rawMember of cast) {
-    const member = normalizeCastMember(rawMember);
-    if (!member || !member.slug) continue;
+    if (showing === total) {
+        characterCount.textContent = `${total} public character${total === 1 ? "" : "s"}`;
+    } else {
+        characterCount.textContent = `Showing ${showing} of ${total} character${total === 1 ? "" : "s"}`;
+    }
+}
 
-    const character = await fetchCharacter(member.slug);
+function groupByFolder(characters) {
+    const folders = {};
 
-    const name = character?.name || member.name || "Unnamed";
-    const species = character?.species || "";
-    const icon = character?.icon ? getImage(character.icon) : "../images/placeholder.png";
-    const role = member.role || "Character";
+    characters.forEach(character => {
+        const folderName = character.folder && String(character.folder).trim()
+            ? character.folder
+            : "Unsorted";
 
-    const card = document.createElement("div");
-    card.className = "world-character-card";
+        if (!folders[folderName]) {
+            folders[folderName] = [];
+        }
+
+        folders[folderName].push(character);
+    });
+
+    return folders;
+}
+
+function sortFolderNames(folderNames) {
+    const folderOrder = [
+        "Mains",
+        "Mascots",
+        "Comfort Characters",
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Unsorted"
+    ];
+
+    return folderNames.sort((a, b) => {
+        const indexA = folderOrder.indexOf(a);
+        const indexB = folderOrder.indexOf(b);
+
+        if (indexA === -1 && indexB === -1) {
+            return a.localeCompare(b);
+        }
+
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+
+        return indexA - indexB;
+    });
+}
+
+
+async function loadCharacters() {
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+            folderContainer.innerHTML = "<p class='loading'>The API loaded, but did not return a character list.</p>";
+            characterCount.textContent = "Could not count characters.";
+            return;
+        }
+
+        allCharacters = data;
+        renderCharacters(allCharacters);
+
+    } catch (error) {
+        console.error(error);
+        folderContainer.innerHTML = "<p class='loading'>Could not load characters.</p>";
+        characterCount.textContent = "Could not load character count.";
+    }
+}
+
+function createCharacterCard(character) {
+    const name = character.name || "Unnamed";
+    const slug = character.slug || "";
+    const species = character.species || "Unknown Species";
+    const icon = getImage(character.icon);
+
+    const card = document.createElement("a");
+    card.className = "character-card";
+
+    // IMPORTANT:
+    // This links to the universal character page with the slug included.
+    // Do not change this back to characters/sabrina.html.
+    card.href = `characters/index.html?slug=${encodeURIComponent(slug)}`;
+
     card.innerHTML = `
-      <img src="${icon}" alt="${name}">
-      <h3>${name}</h3>
-      ${species ? `<p class="world-character-species">${species}</p>` : ""}
-      <p class="world-character-role">${role}</p>
-      <a href="../characters/index.html?slug=${encodeURIComponent(member.slug)}">View Profile →</a>
+        ${character.favorite ? `<span class="favorite-badge">⭐ Favorite</span>` : ""}
+        <img src="${icon}" alt="${name}">
+        <h2>${name}</h2>
+        <p>${species}</p>
     `;
-    grid.appendChild(card);
-  }
 
-  if (!grid.children.length) grid.innerHTML = "<p>No featured characters yet.</p>";
+    return card;
 }
 
-function setupTabs() {
-  const buttons = document.querySelectorAll(".tab-button");
-  buttons.forEach(button => {
-    if (button.dataset.bound === "true") return;
-    button.dataset.bound = "true";
-    button.addEventListener("click", () => {
-      const target = button.dataset.tab;
-      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-      document.querySelectorAll(".tab-panel").forEach(panel => panel.classList.remove("active"));
-      button.classList.add("active");
-      const panel = document.getElementById(target);
-      if (panel) panel.classList.add("active");
-    });
-  });
-}
+function renderCharacters(characters) {
+    folderContainer.innerHTML = "";
 
-function hideEmptyTabs(world) {
-  const checks = [
-    { tab: "map", empty: !world.mapImage },
-    { tab: "culture", empty: !world.culture },
-    { tab: "systems", empty: !world.magicSystem && !world.technology && !world.economy },
-    { tab: "characters", empty: !Array.isArray(world.characters) || world.characters.length === 0 },
-    { tab: "gallery", empty: !Array.isArray(world.gallery) || world.gallery.length === 0 },
-    { tab: "trivia", empty: !world.trivia }
-  ];
-  checks.forEach(item => {
-    if (!item.empty) return;
-    const button = document.querySelector(`[data-tab="${item.tab}"]`);
-    const panel = document.getElementById(item.tab);
-    if (button) button.style.display = "none";
-    if (panel) panel.style.display = "none";
-  });
-}
-
-function openLightbox(src) {
-  const img = document.getElementById("lightboxImage");
-  const box = document.getElementById("lightbox");
-  if (!img || !box) return;
-  img.src = src;
-  box.classList.add("active");
-}
-
-function closeLightbox() {
-  const img = document.getElementById("lightboxImage");
-  const box = document.getElementById("lightbox");
-  if (!img || !box) return;
-  box.classList.remove("active");
-  img.src = "";
-}
-
-function setupLightbox() {
-  const closeButton = document.getElementById("lightboxClose");
-  const lightbox = document.getElementById("lightbox");
-  if (closeButton) closeButton.addEventListener("click", closeLightbox);
-  if (lightbox) {
-    lightbox.addEventListener("click", event => {
-      if (event.target.id === "lightbox") closeLightbox();
-    });
-  }
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeLightbox();
-  });
-}
-
-async function fillWorld(world) {
-  loadCustomCss(world.customCss);
-  document.title = `${world.name || "World"} | Character Hub`;
-  setText("worldName", world.name, "Unnamed World");
-  setText("worldShortDescription", world.shortDescription, "No short description yet.");
-  setText("worldStatus", world.status);
-  setText("worldEra", world.era);
-  setText("worldOverview", world.overview, "No overview yet.");
-  setText("worldCulture", world.culture, "No culture notes yet.");
-  setText("worldMagicSystem", world.magicSystem);
-  setText("worldTechnology", world.technology);
-  setText("worldEconomy", world.economy);
-  setText("worldTrivia", world.trivia, "No trivia yet.");
-  setImage("worldBanner", world.banner);
-  setImage("worldIcon", world.icon);
-  setImage("worldMap", world.mapImage);
-  renderTags("worldGenre", world.genre);
-  renderTags("worldTheme", world.theme);
-  renderImages("worldGalleryGrid", world.gallery, world.name);
-  await renderWorldCharacters(world.characters);
-  hideEmptyTabs(world);
-}
-
-async function loadWorld() {
-  try {
-    if (!SLUG) {
-      setText("worldName", "No world selected");
-      setText("worldShortDescription", "Go back and choose a world.");
-      return;
+    if (!characters || characters.length === 0) {
+        folderContainer.innerHTML = "<p class='loading'>No characters found.</p>";
+        updateCount(0, allCharacters.length);
+        return;
     }
-    const response = await fetch(`${API_URL}/world/${encodeURIComponent(SLUG)}`);
-    const world = await response.json();
-    if (world.error) {
-      setText("worldName", "World not found");
-      setText("worldShortDescription", `No world found for slug: ${SLUG}`);
-      return;
-    }
-    await fillWorld(world);
-  } catch (err) {
-    console.error("World page error:", err);
-    setText("worldName", "Unable to load world");
-    setText("worldShortDescription", "Check the browser console for the exact error.");
-  }
+
+    const folders = groupByFolder(characters);
+    const folderNames = sortFolderNames(Object.keys(folders));
+
+    folderNames.forEach(folderName => {
+        const section = document.createElement("section");
+        section.className = "folder-section";
+
+        const heading = document.createElement("div");
+        heading.className = "folder-heading";
+
+        heading.innerHTML = `
+            <div class="folder-title">
+                <span class="folder-arrow">▼</span>
+                <h2>${folderName}</h2>
+            </div>
+
+            <span>${folders[folderName].length} character${folders[folderName].length === 1 ? "" : "s"}</span>
+        `;
+
+        const grid = document.createElement("div");
+        grid.className = "character-grid";
+
+        folders[folderName].forEach(character => {
+            grid.appendChild(createCharacterCard(character));
+        });
+
+        heading.addEventListener("click", () => {
+            section.classList.toggle("collapsed");
+
+            const arrow = heading.querySelector(".folder-arrow");
+
+            if (section.classList.contains("collapsed")) {
+                arrow.textContent = "▶";
+            } else {
+                arrow.textContent = "▼";
+            }
+        });
+
+        section.appendChild(heading);
+        section.appendChild(grid);
+
+        folderContainer.appendChild(section);
+    });
+
+    updateCount(characters.length, allCharacters.length);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setupTabs();
-  setupLightbox();
-  loadWorld();
+const asArray = value => Array.isArray(value) ? value : [];
+
+searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase().trim();
+
+    if (!value) {
+        renderCharacters(allCharacters);
+        return;
+    }
+
+    const filtered = allCharacters.filter(character => {
+        const gender = (character.gender || "").toLowerCase();
+
+        if (value === "male" || value === "female") {
+            return gender === value;
+        }
+
+        const searchableText = [
+            character.name,
+            character.species,
+            character.slug,
+            character.folder,
+            character.status,
+            character.gender,
+            character.pronouns,
+            character.age,
+            character.occupation,
+            character.mbti,
+            character.introduction,
+            character.summary,
+            character.personality,
+
+            character.favorites?.food,
+            character.favorites?.drink,
+            character.favorites?.color,
+            character.favorites?.season,
+            character.favorites?.flower,
+            character.favorites?.scent,
+            character.favorites?.music,
+            character.favorites?.animal,
+
+            ...asArray(character.tags),
+            ...asArray(character.likes),
+            ...asArray(character.dislikes),
+            ...asArray(character.hobbies),
+            ...asArray(character.fears)
+        ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+        return searchableText.includes(value);
+    });
+
+    renderCharacters(filtered);
 });
+
+loadCharacters();
 </script>
+
 </body>
 </html>
