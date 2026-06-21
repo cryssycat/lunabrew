@@ -188,7 +188,7 @@ async function loadCharacters() {
             return;
         }
 
-  allCharacters = data;
+  allCharacters = data.filter(character => character.hub === "LunaHub");
 renderCharacters(allCharacters);
 
     } catch (error) {
