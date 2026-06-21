@@ -1132,3 +1132,6 @@ body.layout-minimal .content-grid {
     opacity:1;
 }
 
+.content-card p{
+    white-space:pre-line;
+}
