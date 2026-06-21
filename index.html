@@ -97,7 +97,7 @@
 </main>
 
 <script>
-const API_URL = "https://lunabreww.crysthigpen.workers.dev/characters";
+const API_URL = "https://charahub.crysthigpen.workers.dev/characters";
 
 const folderContainer = document.getElementById("folderContainer");
 const searchInput = document.getElementById("searchInput");
@@ -188,8 +188,8 @@ async function loadCharacters() {
             return;
         }
 
-        allCharacters = data;
-        renderCharacters(allCharacters);
+       allCharacters = data.filter(character => character.hub === "LunaHub");
+renderCharacters(allCharacters);s);
 
     } catch (error) {
         console.error(error);
