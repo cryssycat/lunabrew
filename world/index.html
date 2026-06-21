@@ -408,7 +408,7 @@ async function loadCharactersForWorld(world) {
     }
 
     allWorldCharacters = characters.filter(character => {
-      return character.hub === "LunaHub" && characterBelongsToWorld(character, world);
+     return characterBelongsToWorld(character, world);
     });
 
     renderWorldCharacters(allWorldCharacters);
