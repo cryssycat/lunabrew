@@ -1094,43 +1094,15 @@ body.layout-minimal .content-grid {
     }
 }
 
-.watermarked-image{
+.lightbox-image-wrap{
     position:relative;
-    overflow:hidden;
-    border-radius:20px;
+    display:inline-block;
+    max-width:90vw;
+    max-height:90vh;
+    line-height:0;
 }
 
-.watermarked-image img{
-    display:block;
-    width:100%;
-}
-
-.watermarked-image::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background-image:url("/images/lbrewm.png");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:65%;
-
-    opacity:1;
-
-    pointer-events:none;
-    z-index:2;
-}
-
-.nsfw-overlay{
-    z-index:3;
-}
-
-
-.lightbox{
-    position:fixed;
-}
-
-.lightbox::after{
+.lightbox-image-wrap::after{
     content:"";
     position:absolute;
     inset:0;
@@ -1140,22 +1112,9 @@ body.layout-minimal .content-grid {
     background-position:center;
     background-size:50%;
 
-    opacity:.12;
+    opacity:1;
     pointer-events:none;
-    z-index:1002;
-}
-
-#lightboxImage{
-    position:relative;
-    z-index:1001;
-}
-
-
-.lightbox-image-wrap{
-    position:relative;
-    display:inline-block;
-    max-width:90vw;
-    max-height:90vh;
+    z-index:2;
 }
 
 .lightbox-image-wrap #lightboxImage{
@@ -1164,16 +1123,11 @@ body.layout-minimal .content-grid {
     max-height:90vh;
     width:auto;
     height:auto;
+    position:relative;
+    z-index:1;
+}
+.watermarked-image::after{
+    background-image:url("/images/lbrewm.png");
+    opacity:1;
 }
 
-.lightbox-watermark{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:50%;
-    max-width:500px;
-    transform:translate(-50%, -50%);
-    opacity:.12;
-    pointer-events:none;
-    z-index:5;
-}
