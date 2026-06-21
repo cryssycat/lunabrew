@@ -352,7 +352,7 @@ function renderCharacterWorlds(worlds) {
         const link = document.createElement("a");
         link.className = "tag";
         link.textContent = world.name;
-        link.href = `../world/index.html?slug=${encodeURIComponent(world.slug)}`;
+        link.href = `https://characterhub.pages.dev/world/?slug=${encodeURIComponent(world.slug)}`;
 
         box.appendChild(link);
     });
