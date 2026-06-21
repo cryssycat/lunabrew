@@ -257,10 +257,8 @@ function renderCharacters(characters) {
 
     updateCount(characters.length, allCharacters.length);
 }
-searchInput.addEventListener("input", () => {
-    const value = searchInput.value.toLowerCase().trim();
 
-  const asArray = value => Array.isArray(value) ? value : [];
+const asArray = value => Array.isArray(value) ? value : [];
 
 searchInput.addEventListener("input", () => {
     const value = searchInput.value.toLowerCase().trim();
@@ -319,6 +317,9 @@ searchInput.addEventListener("input", () => {
 
 loadCharacters();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
