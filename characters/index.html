@@ -771,7 +771,7 @@ async function loadCharacter() {
             return;
         }
 
-        const listResponse = await fetch(API_URL);
+        const listResponse = await fetch(`${API_URL}/characters`);
         const listData = await listResponse.json();
 
         allCharacters = Array.isArray(listData) ? listData : [];
