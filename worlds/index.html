@@ -1,0 +1,34 @@
+<script>
+const WORLDS_ENDPOINT =
+  "https://charahub.crysthigpen.workers.dev/worlds";
+
+async function loadWorlds() {
+  const response = await fetch(WORLDS_ENDPOINT);
+  const worlds = await response.json();
+
+  const grid = document.getElementById("worldsGrid");
+  grid.innerHTML = "";
+
+  worlds.forEach(world => {
+    const card = document.createElement("a");
+
+    card.className = "image-card world-card";
+
+    card.href =
+      `../world/?slug=${encodeURIComponent(world.slug)}`;
+
+    card.innerHTML = `
+      <div class="watermarked-image">
+        <img src="/${world.banner || world.icon}" alt="${world.name}">
+      </div>
+
+      <h2>${world.name}</h2>
+      <p>${world.shortDescription || ""}</p>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+loadWorlds();
+</script>
