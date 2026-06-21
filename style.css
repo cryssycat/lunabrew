@@ -1001,7 +1001,7 @@ body.layout-minimal .content-grid {
     position:absolute;
     inset:0;
 
-    background-image:url("/images/starwm.png");
+    background-image:url("/images/lbrewm.png");
     background-repeat:no-repeat;
     background-position:center;
     background-size:65%;
@@ -1137,7 +1137,7 @@ body.layout-minimal .content-grid {
     position:absolute;
     inset:0;
 
-    background-image:url("/images/starwm");
+    background-image:url("/images/lbrewm.png");
     background-repeat:no-repeat;
     background-position:center;
     background-size:50%;
