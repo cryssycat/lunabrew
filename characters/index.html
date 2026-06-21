@@ -4,9 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Character | StarSundae Character Hub</title>
+<title>Character | LunaHub</title>
 
 <link rel="stylesheet" href="../style.css?v=153">
+
+<style id="lightbox-watermark-fix">
+.lightbox.active{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+.lightbox-image-wrap{
+    position:relative !important;
+    display:inline-block !important;
+    max-width:90vw !important;
+    max-height:90vh !important;
+    line-height:0 !important;
+}
+
+.lightbox-image-wrap #lightboxImage{
+    display:block !important;
+    max-width:90vw !important;
+    max-height:90vh !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit:contain !important;
+    position:relative !important;
+    z-index:1 !important;
+}
+
+.lightbox-image-wrap .lightbox-watermark{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    transform:translate(-50%, -50%) !important;
+    width:50% !important;
+    max-width:520px !important;
+    height:auto !important;
+    opacity:1 !important;
+    pointer-events:none !important;
+    z-index:2 !important;
+    display:block !important;
+    visibility:visible !important;
+    filter:none !important;
+    mix-blend-mode:normal !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -34,6 +79,10 @@
             <p><strong>Birthday:</strong> <span id="birthday">—</span></p>
             <p><strong>Height:</strong> <span id="height">—</span></p>
             <p><strong>Occupation:</strong> <span id="occupation">—</span></p>
+            <div id="characterWorldsWrap" style="display:none;">
+                <h3>World</h3>
+                <div id="characterWorlds" class="tag-list"></div>
+            </div>
             <p><strong>Folder:</strong> <span id="folder">—</span></p>
             <p><strong>Status:</strong> <span id="status">—</span></p>
 
@@ -60,7 +109,7 @@
             <div class="content-card wide-card"><h2>Summary</h2><p id="summary">—</p></div>
             <div class="content-card"><h2>Personality</h2><p id="personality">—</p></div>
             <div class="content-card"><h2>MBTI</h2><p id="mbti">—</p></div>
-               <div class="content-card"><h2>Design Notes</h2><p id="designNotes">—</p></div>
+           <div class="content-card"><h2>Design Notes</h2><p id="designNotes">—</p></div>
             <div class="content-card"><h2>Theme Song</h2><p id="themeSong">—</p></div>
             <div class="content-card"><h2>Likes</h2><div id="likes" class="tag-list"></div></div>
             <div class="content-card"><h2>Dislikes</h2><div id="dislikes" class="tag-list"></div></div>
@@ -171,15 +220,14 @@
 
 <div id="lightbox" class="lightbox">
     <button id="lightboxClose" class="lightbox-close">×</button>
-
     <div class="lightbox-image-wrap">
         <img id="lightboxImage" src="" alt="Full-size image">
+        <img class="lightbox-watermark" src="../images/starwm.png" alt="">
     </div>
 </div>
 
 <script>
-const API_URL = "https://lunabreww.crysthigpen.workers.dev";
-    
+const API_URL = "https://charahub.crysthigpen.workers.dev";
 const HUBS = {
     star: {
         site: "https://characterhub.pages.dev",
@@ -187,11 +235,20 @@ const HUBS = {
     },
     luna: {
         site: "https://lunabrew.pages.dev",
-        api: "https://lunabreww.crysthigpen.workers.dev"
+        api: "https://charahub.crysthigpen.workers.dev"
     }
 };
 const params = new URLSearchParams(window.location.search);
 const SLUG = params.get("slug");
+
+function normalizeHubKey(value) {
+    const hub = String(value || "").trim().toLowerCase();
+
+    if (hub === "starhub" || hub === "star") return "star";
+    if (hub === "lunahub" || hub === "luna") return "luna";
+
+    return hub;
+}
 
 let allCharacters = [];
 let currentCharacter = null;
@@ -215,7 +272,7 @@ function getHubImage(character, path) {
 
     if (path.startsWith("http")) return path;
 
-    const hubKey = character?.hub || "";
+    const hubKey = normalizeHubKey(character?.hub || "");
     const hub = HUBS[hubKey];
 
     if (hub) {
@@ -270,6 +327,34 @@ function renderTags(id, items) {
         span.className = "tag";
         span.textContent = item;
         box.appendChild(span);
+    });
+}
+
+
+function renderCharacterWorlds(worlds) {
+    const wrap = document.getElementById("characterWorldsWrap");
+    const box = document.getElementById("characterWorlds");
+
+    if (!wrap || !box) return;
+
+    box.innerHTML = "";
+
+    if (!Array.isArray(worlds) || worlds.length === 0) {
+        wrap.style.display = "none";
+        return;
+    }
+
+    wrap.style.display = "block";
+
+    worlds.forEach(world => {
+        if (!world || !world.name || !world.slug) return;
+
+        const link = document.createElement("a");
+        link.className = "tag";
+        link.textContent = world.name;
+        link.href = `../world/index.html?slug=${encodeURIComponent(world.slug)}`;
+
+        box.appendChild(link);
     });
 }
 
@@ -386,11 +471,15 @@ function renderImages(id, images, name) {
         card.className = "image-card";
 
         const img = document.createElement("img");
-        img.src = getImage(item.url);
+        img.src = getHubImage(currentCharacter, item.url) || getImage(item.url);
         img.alt = `${name || "Character"} image`;
-        img.addEventListener("click", () => openLightbox(getImage(item.url)));
+        img.addEventListener("click", () => openLightbox(getHubImage(currentCharacter, item.url) || getImage(item.url)));
 
-        card.appendChild(img);
+        const wrapper = document.createElement("div");
+        wrapper.className = "watermarked-image";
+        wrapper.appendChild(img);
+
+        card.appendChild(wrapper);
 
         if (item.label) {
             const caption = document.createElement("p");
@@ -425,7 +514,7 @@ function renderNSFWImages(images, name) {
         card.className = "image-card nsfw-card";
 
         const img = document.createElement("img");
-        img.src = getImage(item.url);
+        img.src = getHubImage(currentCharacter, item.url) || getImage(item.url);
         img.alt = `${name || "Character"} mature gallery image`;
 
         const overlay = document.createElement("div");
@@ -435,8 +524,12 @@ function renderNSFWImages(images, name) {
             <small>Click to reveal</small>
         `;
 
-        card.appendChild(img);
-        card.appendChild(overlay);
+        const wrapper = document.createElement("div");
+        wrapper.className = "watermarked-image";
+        wrapper.appendChild(img);
+        wrapper.appendChild(overlay);
+
+        card.appendChild(wrapper);
 
         if (item.label) {
             const caption = document.createElement("p");
@@ -455,7 +548,7 @@ function renderNSFWImages(images, name) {
                 return;
             }
 
-            openLightbox(getImage(item.url));
+            openLightbox(getHubImage(currentCharacter, item.url) || getImage(item.url));
         });
 
         grid.appendChild(card);
@@ -697,7 +790,7 @@ document.body.classList.add(layoutClass);
 
     loadCustomCss(character.customCss);
 
-    document.title = `${character.name || "Character"} | StarSundae Character Hub`;
+    document.title = `${character.name || "Character"} | LunaHub`;
 
     setText("characterName", character.name, "Unnamed Character");
     setText("characterSpecies", character.species, "");
@@ -716,7 +809,7 @@ document.body.classList.add(layoutClass);
     setText("summary", character.summary, "No summary yet.");
     setText("personality", character.personality, "No personality notes yet.");
     setText("mbti", character.mbti);
-    setText("voiceClaim", character.voiceClaim);
+   setText("designNotes", character.designNotes, "No design notes yet.");
     setText("themeSong", character.themeSong);
 
     setText("trivia", character.trivia, "No trivia yet.");
@@ -741,6 +834,7 @@ document.body.classList.add(layoutClass);
     renderCreditPills("creditsPills", character.credits);
 
     renderTags("tags", character.tags);
+    renderCharacterWorlds(character.worlds);
     renderTags("likes", character.likes);
     renderTags("dislikes", character.dislikes);
     renderTags("hobbies", character.hobbies);
@@ -748,7 +842,7 @@ document.body.classList.add(layoutClass);
 
     const mainRef = document.getElementById("mainRef");
     if (mainRef) {
-        mainRef.src = getImage(character.mainRef || character.icon || "images/placeholder.png");
+        mainRef.src = getHubImage(character, character.mainRef || character.icon) || getImage("images/placeholder.png");
         mainRef.alt = `${character.name || "Character"} reference`;
     }
 
