@@ -982,3 +982,119 @@ body.layout-minimal .content-grid {
     background: #76406a;
     border-radius: 999px;
 }
+
+
+.creator-profile-card{
+    width:90%;
+    max-width:1000px;
+    margin:35px auto;
+    padding:32px;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:30px;
+    align-items:center;
+
+    background:rgba(36,24,44,.85);
+    border:1px solid rgba(185,155,215,.12);
+    border-radius:35px;
+    backdrop-filter:blur(18px);
+    box-shadow:0 0 25px rgba(0,0,0,.45);
+}
+
+.creator-avatar-wrap{
+    display:flex;
+    justify-content:center;
+}
+
+.creator-avatar{
+    width:165px;
+    height:165px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #d6a0cc;
+    box-shadow:
+        0 0 20px rgba(214,160,204,.25),
+        0 0 40px rgba(0,0,0,.4);
+}
+
+.creator-kicker{
+    color:#f0d7eb;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:6px;
+}
+
+.creator-profile-info h2{
+    color:#e6bfdc;
+    font-size:2.4rem;
+    margin-bottom:12px;
+}
+
+.creator-bio{
+    color:#c9bdd6;
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.creator-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:18px 0;
+}
+
+.creator-pills span{
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(118,64,106,.35);
+    color:#f0d7eb;
+    border:1px solid rgba(185,155,215,.14);
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.creator-mini-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:14px;
+    margin-top:20px;
+}
+
+.creator-mini-grid div{
+    padding:16px;
+    border-radius:22px;
+    background:rgba(52,34,63,.65);
+    border:1px solid rgba(185,155,215,.10);
+}
+
+.creator-mini-grid strong{
+    color:#e6bfdc;
+}
+
+.creator-mini-grid p{
+    color:#c9bdd6;
+    margin-top:5px;
+    line-height:1.5;
+}
+
+@media(max-width:750px){
+    .creator-profile-card{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:26px 22px;
+    }
+
+    .creator-profile-info h2{
+        font-size:2rem;
+    }
+
+    .creator-pills{
+        justify-content:center;
+    }
+
+    .creator-mini-grid{
+        grid-template-columns:1fr;
+    }
+}
