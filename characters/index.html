@@ -193,21 +193,29 @@ let allCharacters = [];
 let currentCharacter = null;
 let customCssLoaded = "";
 
-function getImage(path, hubKey = null) {
+function getImage(path) {
     if (!path) return "../images/placeholder.png";
 
     path = String(path).trim();
 
     if (path.startsWith("http")) return path;
-
-    if (hubKey && HUBS[hubKey]) {
-        return HUBS[hubKey].site + "/" + path.replace(/^\/+/, "");
-    }
-
     if (path.startsWith("/")) return window.location.origin + path;
 
     return window.location.origin + "/" + path;
 }
+
+function getHubImage(character, path) {
+    if (!path) return "";
+
+    if (path.startsWith("http")) return path;
+
+    const hub = HUBS[character.hub];
+
+    if (hub) {
+        return hub.site + "/" + path.replace(/^\/+/, "");
+    }
+
+    return getImage(path);
 
 function loadCustomCss(path) {
     if (!path) return;
@@ -527,7 +535,7 @@ async function renderRelationships(relationships) {
         card.className = "relationship-card relationship-preview-card";
 
         card.innerHTML = `
-            ${icon ? `<img src="${icon}" alt="${name}">` : ""}
+            ${icon ? `<img src="${getHubImage(linkedCharacter, icon)}" alt="${name}">` : ""}
             <h3>${name}</h3>
             ${species ? `<p>${species}</p>` : ""}
             <span class="relationship-type">${type}</span>
