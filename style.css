@@ -983,40 +983,6 @@ body.layout-minimal .content-grid {
     border-radius: 999px;
 }
 
-
-
-.watermarked-image{
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-}
-
-.watermarked-image img{
-    display:block;
-    width:100%;
-}
-
-.watermarked-image::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background-image:url("/images/lbrewm.png");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:65%;
-
-    opacity:1;
-
-    pointer-events:none;
-    z-index:2;
-}
-
-.nsfw-overlay{
-    z-index:3;
-}
-
-
 .creator-profile-card{
     width:90%;
     max-width:1000px;
@@ -1127,6 +1093,38 @@ body.layout-minimal .content-grid {
         grid-template-columns:1fr;
     }
 }
+
+.watermarked-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.watermarked-image img{
+    display:block;
+    width:100%;
+}
+
+.watermarked-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:url("/images/lbrewm.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:65%;
+
+    opacity:1;
+
+    pointer-events:none;
+    z-index:2;
+}
+
+.nsfw-overlay{
+    z-index:3;
+}
+
 
 .lightbox{
     position:fixed;
