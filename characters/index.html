@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Character | LunaHub</title>
+<title>Character | StarSundae Character Hub</title>
 
 <link rel="stylesheet" href="../style.css?v=153">
 
@@ -85,13 +85,15 @@
             </div>
             <p><strong>Folder:</strong> <span id="folder">—</span></p>
             <p><strong>Status:</strong> <span id="status">—</span></p>
+            <p><strong>Art Value:</strong> <span id="artValue">$0</span></p>
 
             <h3>Tags</h3>
             <div id="tags" class="tag-list"></div>
         </aside>
     </section>
 
-    <nav class="tabs" id="tabs">
+    <div class="profile-dashboard">
+        <nav class="tabs" id="tabs">
         <button class="tab-button active" data-tab="overview">Overview</button>
         <button class="tab-button" data-tab="gallery">Gallery</button>
         <button class="tab-button" data-tab="references">References</button>
@@ -99,14 +101,35 @@
         <button class="tab-button" data-tab="favorites">Favorites</button>
         <button class="tab-button" data-tab="credits">Credits</button>
         <button class="tab-button" data-tab="lore">Lore</button>
+        <button id="familiarTabButton" class="tab-button optional-companion-tab" data-tab="familiar">Familiar</button>
+        <button id="hearthlingTabButton" class="tab-button optional-companion-tab" data-tab="hearthling">Hearthling</button>
         <button class="tab-button" data-tab="nsfw">🔞 Mature Gallery</button>
         <button class="tab-button" data-tab="admin">🔧 Admin</button>
-    </nav>
+        </nav>
+
+        <div class="profile-dashboard-content">
 
     <section id="overview" class="tab-panel active">
         <div class="content-grid">
-            <div class="content-card wide-card"><h2>Introduction</h2><p id="introduction">—</p></div>
-            <div class="content-card wide-card"><h2>Summary</h2><p id="summary">—</p></div>
+            <div class="content-card dashboard-main-ref-card">
+                <h2>Main Ref</h2>
+                <img id="dashboardMainRef" class="dashboard-main-ref" src="../images/placeholder.png" alt="Character image">
+            </div>
+            <div class="content-card dashboard-intro-card"><h2>Introduction</h2><p id="introduction">—</p></div>
+            <div class="content-card dashboard-summary-card"><h2>Summary</h2><p id="summary">—</p></div>
+            <div class="content-card dashboard-quick-card">
+                <h2>Quick Facts</h2>
+                <p><strong>Species:</strong> <span id="dashboardSpecies">—</span></p>
+                <p><strong>Gender:</strong> <span id="dashboardGender">—</span></p>
+                <p><strong>Pronouns:</strong> <span id="dashboardPronouns">—</span></p>
+                <p><strong>Age:</strong> <span id="dashboardAge">—</span></p>
+                <p><strong>Birthday:</strong> <span id="dashboardBirthday">—</span></p>
+                <p><strong>Height:</strong> <span id="dashboardHeight">—</span></p>
+                <p><strong>Occupation:</strong> <span id="dashboardOccupation">—</span></p>
+                <p><strong>Folder:</strong> <span id="dashboardFolder">—</span></p>
+                <p><strong>Status:</strong> <span id="dashboardStatus">—</span></p>
+                <p><strong>Art Value:</strong> <span id="dashboardArtValue">$0</span></p>
+            </div>
             <div class="content-card"><h2>Personality</h2><p id="personality">—</p></div>
             <div class="content-card"><h2>MBTI</h2><p id="mbti">—</p></div>
            <div class="content-card"><h2>Design Notes</h2><p id="designNotes">—</p></div>
@@ -176,6 +199,63 @@
         </div>
     </section>
 
+
+    <section id="familiar" class="tab-panel companion-tab-panel">
+        <div class="companion-page">
+            <div class="companion-top-row">
+                <div class="companion-image-card">
+                    <img id="familiarImage" class="companion-image" src="../images/placeholder.png" alt="Familiar image">
+                </div>
+
+                <div class="companion-facts-card">
+                    <h2 id="familiarName">Familiar</h2>
+                    <div class="companion-facts-grid">
+                        <p><strong>Species:</strong> <span id="familiarSpecies">—</span></p>
+                        <p><strong>Bond Type:</strong> <span id="familiarBondType">—</span></p>
+                        <p><strong>Personality:</strong> <span id="familiarPersonality">—</span></p>
+                        <p><strong>Magic:</strong> <span id="familiarMagic">—</span></p>
+                        <p><strong>Ability:</strong> <span id="familiarAbility">—</span></p>
+                        <p><strong>Accessory:</strong> <span id="familiarAccessory">—</span></p>
+                        <p><strong>Favorite Treat:</strong> <span id="familiarFavoriteTreat">—</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="companion-summary-card">
+                <h2>Summary</h2>
+                <p id="familiarSummary">—</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hearthling" class="tab-panel companion-tab-panel">
+        <div class="companion-page">
+            <div class="companion-top-row">
+                <div class="companion-image-card">
+                    <img id="hearthlingImage" class="companion-image" src="../images/placeholder.png" alt="Hearthling image">
+                </div>
+
+                <div class="companion-facts-card">
+                    <h2 id="hearthlingName">Hearthling</h2>
+                    <div class="companion-facts-grid">
+                        <p><strong>Species:</strong> <span id="hearthlingSpecies">—</span></p>
+                        <p><strong>Body Type:</strong> <span id="hearthlingBodyType">—</span></p>
+                        <p><strong>Magic:</strong> <span id="hearthlingMagic">—</span></p>
+                        <p><strong>Wisp:</strong> <span id="hearthlingWisp">—</span></p>
+                        <p><strong>Mutation:</strong> <span id="hearthlingMutation">—</span></p>
+                        <p><strong>Companion:</strong> <span id="hearthlingCompanion">—</span></p>
+                        <p><strong>Rarity:</strong> <span id="hearthlingRarity">—</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="companion-summary-card">
+                <h2>Summary</h2>
+                <p id="hearthlingSummary">—</p>
+            </div>
+        </div>
+    </section>
+
     <section id="nsfw" class="tab-panel">
         <div class="section-title">
             <h2>🔞 Mature Gallery</h2>
@@ -199,7 +279,7 @@
         <div id="adminTools" class="admin-generator" style="display:none;">
             <h2>Gallery Line Generator</h2>
 
-            <input id="genTitle" placeholder="Image title">
+            <input id="genTitle" placeholder="Image title, ex: Ref Sheet [$50]">
             <input id="genPath" placeholder="images/character/file.png">
             <input id="genCredits" placeholder="Artist:Name;Base:Name">
 
@@ -209,6 +289,9 @@
             <button id="copyLine">Copy Line</button>
         </div>
     </section>
+
+        </div>
+    </div>
 
     <div class="profile-nav">
         <a id="prevCharacter" href="../index.html">← Previous</a>
@@ -241,15 +324,6 @@ const HUBS = {
 const params = new URLSearchParams(window.location.search);
 const SLUG = params.get("slug");
 
-function normalizeHubKey(value) {
-    const hub = String(value || "").trim().toLowerCase();
-
-    if (hub === "starhub" || hub === "star") return "star";
-    if (hub === "lunahub" || hub === "luna") return "luna";
-
-    return hub;
-}
-
 let allCharacters = [];
 let currentCharacter = null;
 let customCssLoaded = "";
@@ -263,6 +337,15 @@ function getImage(path) {
     if (path.startsWith("/")) return window.location.origin + path;
 
     return window.location.origin + "/" + path;
+}
+
+function normalizeHubKey(value) {
+    const hub = String(value || "").trim().toLowerCase();
+
+    if (hub === "starhub" || hub === "star") return "star";
+    if (hub === "lunahub" || hub === "luna") return "luna";
+
+    return hub;
 }
 
 function getHubImage(character, path) {
@@ -352,7 +435,7 @@ function renderCharacterWorlds(worlds) {
         const link = document.createElement("a");
         link.className = "tag";
         link.textContent = world.name;
-        link.href = `https://characterhub.pages.dev/world/?slug=${encodeURIComponent(world.slug)}`;
+        link.href = `../world/index.html?slug=${encodeURIComponent(world.slug)}`;
 
         box.appendChild(link);
     });
@@ -438,6 +521,45 @@ function normalizeImageItem(item) {
     };
 }
 
+function getImageValue(image) {
+    const item = normalizeImageItem(image);
+    const label = item?.label || "";
+
+    // Supported syntax in the existing image title/label:
+    // Ref Sheet [$50]
+    // Headshot [50]
+    // Fullbody value:50
+    // Chibi value=$25
+    const match =
+        label.match(/\[\s*\$?\s*(\d+(?:\.\d{1,2})?)\s*\]/) ||
+        label.match(/value\s*[:=]\s*\$?\s*(\d+(?:\.\d{1,2})?)/i);
+
+    return match ? Number(match[1]) : 0;
+}
+
+function calculateCharacterValue(character) {
+    const allImages = [
+        ...(Array.isArray(character?.gallery) ? character.gallery : []),
+        ...(Array.isArray(character?.references) ? character.references : []),
+        ...(Array.isArray(character?.nsfwGallery) ? character.nsfwGallery : [])
+    ];
+
+    if (Array.isArray(character?.auGalleries)) {
+        character.auGalleries.forEach(au => {
+            if (Array.isArray(au?.images)) allImages.push(...au.images);
+        });
+    }
+
+    return allImages.reduce((total, image) => total + getImageValue(image), 0);
+}
+
+function formatMoney(value) {
+    return "$" + Number(value || 0).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+    });
+}
+
 function renderImageCreditPills(card, item) {
     if (!Array.isArray(item.credits) || item.credits.length === 0) return;
 
@@ -471,9 +593,9 @@ function renderImages(id, images, name) {
         card.className = "image-card";
 
         const img = document.createElement("img");
-        img.src = getHubImage(currentCharacter, item.url) || getImage(item.url);
+        img.src = getImage(item.url);
         img.alt = `${name || "Character"} image`;
-        img.addEventListener("click", () => openLightbox(getHubImage(currentCharacter, item.url) || getImage(item.url)));
+        img.addEventListener("click", () => openLightbox(getImage(item.url)));
 
         const wrapper = document.createElement("div");
         wrapper.className = "watermarked-image";
@@ -484,7 +606,8 @@ function renderImages(id, images, name) {
         if (item.label) {
             const caption = document.createElement("p");
             caption.className = "image-title";
-            caption.textContent = item.label;
+         caption.textContent =
+    item.label.replace(/\[\$\d+(?:\.\d+)?\]/g, "").trim();
             card.appendChild(caption);
         }
 
@@ -514,7 +637,7 @@ function renderNSFWImages(images, name) {
         card.className = "image-card nsfw-card";
 
         const img = document.createElement("img");
-        img.src = getHubImage(currentCharacter, item.url) || getImage(item.url);
+        img.src = getImage(item.url);
         img.alt = `${name || "Character"} mature gallery image`;
 
         const overlay = document.createElement("div");
@@ -548,7 +671,7 @@ function renderNSFWImages(images, name) {
                 return;
             }
 
-            openLightbox(getHubImage(currentCharacter, item.url) || getImage(item.url));
+            openLightbox(getImage(item.url));
         });
 
         grid.appendChild(card);
@@ -574,7 +697,8 @@ async function getLinkedCharacter(relSlug) {
         return allCharacters.find(c => String(c.slug).trim() === cleanSlug) || null;
     }
 
-    const [hubKey, realSlug] = cleanSlug.split(":");
+    const [rawHubKey, realSlug] = cleanSlug.split(":");
+    const hubKey = normalizeHubKey(rawHubKey);
     const hub = HUBS[hubKey];
 
     if (!hub || !realSlug) return null;
@@ -601,7 +725,8 @@ function getCharacterLink(slug) {
     const cleanSlug = String(slug).trim();
 
     if (cleanSlug.includes(":")) {
-        const [hubKey, realSlug] = cleanSlug.split(":");
+        const [rawHubKey, realSlug] = cleanSlug.split(":");
+        const hubKey = normalizeHubKey(rawHubKey);
         const hub = HUBS[hubKey];
 
         if (hub && realSlug) {
@@ -628,7 +753,11 @@ async function renderRelationships(relationships) {
 
         const name = linkedCharacter?.name || rel.name || "Unnamed";
         const species = linkedCharacter?.species || "";
-        const icon = linkedCharacter?.icon || "";
+       const icon =
+    linkedCharacter?.icon ||
+    linkedCharacter?.mainRef ||
+    linkedCharacter?.mainImage ||
+    "";
         const type = rel.type || "Connection";
         const notes = rel.notes || "";
         const slug = rel.slug || "";
@@ -636,8 +765,10 @@ async function renderRelationships(relationships) {
         const card = document.createElement("div");
         card.className = "relationship-card relationship-preview-card";
 
+        const iconUrl = icon ? getHubImage(linkedCharacter, icon) : "";
+
         card.innerHTML = `
-            ${icon ? `<img src="${getHubImage(linkedCharacter, icon)}" alt="${name}">` : ""}
+            ${iconUrl ? `<img src="${iconUrl}" alt="${name}" onerror="this.style.display='none'">` : ""}
             <h3>${name}</h3>
             ${species ? `<p>${species}</p>` : ""}
             <span class="relationship-type">${type}</span>
@@ -686,6 +817,83 @@ function renderAuTabs(character) {
         profilePage.insertBefore(section, profileNav);
         renderImages(`${tabId}Grid`, au.images, character.name);
     });
+}
+
+
+function hasCompanionData(character, type) {
+    const prefix = type === "familiar" ? "familiar" : "hearthling";
+    return Boolean(
+        character?.[`${prefix}Name`] ||
+        character?.[`${prefix}Image`] ||
+        character?.[`${prefix}Summary`]
+    );
+}
+
+function setOptionalTab(tabId, panelId, shouldShow) {
+    const tab = document.getElementById(tabId);
+    const panel = document.getElementById(panelId);
+
+    if (tab) tab.style.display = shouldShow ? "" : "none";
+    if (!shouldShow && panel) panel.classList.remove("active");
+}
+
+function ensureVisibleActiveTab() {
+    const activeButton = document.querySelector(".tab-button.active");
+    const activePanel = document.querySelector(".tab-panel.active");
+
+    if (activeButton && activeButton.style.display !== "none" && activePanel) return;
+
+    document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(panel => panel.classList.remove("active"));
+
+    const overviewButton = document.querySelector('[data-tab="overview"]');
+    const overviewPanel = document.getElementById("overview");
+
+    if (overviewButton) overviewButton.classList.add("active");
+    if (overviewPanel) overviewPanel.classList.add("active");
+}
+
+function fillCompanionImage(id, character, path, fallbackAlt) {
+    const img = document.getElementById(id);
+    if (!img) return;
+
+    img.src = getHubImage(character, path) || getImage("../images/placeholder.png");
+    img.alt = fallbackAlt || "Companion image";
+}
+
+function renderCompanionTabs(character) {
+    const hasFamiliar = hasCompanionData(character, "familiar");
+    const hasHearthling = hasCompanionData(character, "hearthling");
+
+    setOptionalTab("familiarTabButton", "familiar", hasFamiliar);
+    setOptionalTab("hearthlingTabButton", "hearthling", hasHearthling);
+    ensureVisibleActiveTab();
+
+    if (hasFamiliar) {
+        setText("familiarName", character.familiarName, "Familiar");
+        setText("familiarSpecies", character.familiarSpecies);
+        setText("familiarBondType", character.familiarBondType);
+        setText("familiarPersonality", character.familiarPersonality);
+        setText("familiarMagic", character.familiarMagic);
+        setText("familiarAbility", character.familiarAbility);
+        setText("familiarAccessory", character.familiarAccessory);
+        setText("familiarFavoriteTreat", character.familiarFavoriteTreat);
+        setText("familiarSummary", character.familiarSummary, "No familiar summary yet.");
+        fillCompanionImage("familiarImage", character, character.familiarImage, `${character.familiarName || "Familiar"} image`);
+    }
+
+    if (hasHearthling) {
+        setText("hearthlingName", character.hearthlingName, "Hearthling");
+        setText("hearthlingSpecies", character.hearthlingSpecies);
+        setText("hearthlingBodyType", character.hearthlingBodyType);
+        setText("hearthlingMagic", character.hearthlingMagic);
+        setText("hearthlingWisp", character.hearthlingWisp);
+        setText("hearthlingMutation", character.hearthlingMutation);
+        setText("hearthlingCompanion", character.hearthlingCompanion);
+        setText("hearthlingRarity", character.hearthlingRarity);
+        setText("hearthlingSummary", character.hearthlingSummary, "No hearthling summary yet.");
+        fillCompanionImage("hearthlingImage", character, character.hearthlingImage, `${character.hearthlingName || "Hearthling"} image`);
+    }
 }
 
 function setupTabs() {
@@ -777,7 +985,8 @@ document.body.classList.remove(
     "layout-classic",
     "layout-visual-novel",
     "layout-magazine",
-    "layout-minimal"
+    "layout-minimal",
+    "layout-dashboard"
 );
 
 const layoutClass = "layout-" + (character.layout || "Default")
@@ -790,7 +999,7 @@ document.body.classList.add(layoutClass);
 
     loadCustomCss(character.customCss);
 
-    document.title = `${character.name || "Character"} | LunaHub`;
+    document.title = `${character.name || "Character"} | StarSundae Character Hub`;
 
     setText("characterName", character.name, "Unnamed Character");
     setText("characterSpecies", character.species, "");
@@ -804,6 +1013,18 @@ document.body.classList.add(layoutClass);
     setText("occupation", character.occupation);
     setText("folder", character.folder);
     setText("status", character.status);
+    setText("dashboardSpecies", character.species);
+    setText("dashboardGender", character.gender);
+    setText("dashboardPronouns", character.pronouns);
+    setText("dashboardAge", character.age);
+    setText("dashboardBirthday", character.birthday);
+    setText("dashboardHeight", character.height);
+    setText("dashboardOccupation", character.occupation);
+    setText("dashboardFolder", character.folder);
+    setText("dashboardStatus", character.status);
+    const calculatedArtValue = formatMoney(calculateCharacterValue(character));
+    setText("artValue", calculatedArtValue, "$0");
+    setText("dashboardArtValue", calculatedArtValue, "$0");
 
     setText("introduction", character.introduction, "No introduction yet.");
     setText("summary", character.summary, "No summary yet.");
@@ -833,6 +1054,12 @@ document.body.classList.add(layoutClass);
     renderCreditPills("mainCreditPills", character.credits);
     renderCreditPills("creditsPills", character.credits);
 
+
+    const dashboardArtValue = document.getElementById("dashboardArtValue");
+    if (dashboardArtValue) {
+        dashboardArtValue.textContent = formatMoney(calculateCharacterValue(character));
+    }
+
     renderTags("tags", character.tags);
     renderCharacterWorlds(character.worlds);
     renderTags("likes", character.likes);
@@ -846,10 +1073,18 @@ document.body.classList.add(layoutClass);
         mainRef.alt = `${character.name || "Character"} reference`;
     }
 
+    const dashboardMainRef = document.getElementById("dashboardMainRef");
+    if (dashboardMainRef) {
+        dashboardMainRef.src = getHubImage(character, character.mainRef || character.icon) || getImage("images/placeholder.png");
+        dashboardMainRef.alt = `${character.name || "Character"} image`;
+    }
+
     renderImages("galleryGrid", character.gallery, character.name);
     renderImages("referencesGrid", character.references, character.name);
     renderNSFWImages(character.nsfwGallery, character.name);
     renderRelationships(character.relationships);
+
+    renderCompanionTabs(character);
 
     renderAuTabs(character);
     setupTabs();
