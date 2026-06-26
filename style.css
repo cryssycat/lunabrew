@@ -1882,3 +1882,254 @@ body:not(.layout-dashboard) .dashboard-quick-card {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* ==========================================
+   LUNAHUB GOTH COLOR OVERRIDE
+   Dark gothic moon palette
+========================================== */
+
+:root {
+    --luna-bg-dark: #090611;
+    --luna-bg-mid: #160d24;
+    --luna-bg-card: rgba(24, 13, 38, .82);
+    --luna-bg-card-strong: rgba(34, 17, 52, .9);
+    --luna-border: rgba(198, 142, 255, .28);
+    --luna-border-soft: rgba(255, 255, 255, .12);
+    --luna-text: #eadfff;
+    --luna-muted: #bda8d8;
+    --luna-accent: #c98cff;
+    --luna-accent-2: #ff8fcf;
+    --luna-accent-3: #7c4dff;
+    --luna-tag: rgba(82, 39, 112, .82);
+}
+
+body {
+    color: var(--luna-text) !important;
+    background:
+        radial-gradient(circle at top, rgba(120, 73, 180, .28), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 143, 207, .12), transparent 35%),
+        linear-gradient(180deg, #090611 0%, #12091f 45%, #1a0d2a 100%) !important;
+}
+
+body::before {
+    background-image:
+        radial-gradient(rgba(255,255,255,.45) 1px, transparent 1px),
+        radial-gradient(rgba(201,140,255,.38) 1px, transparent 1px),
+        radial-gradient(ellipse at 20% 20%, rgba(120,73,180,.24) 0 18px, transparent 19px),
+        radial-gradient(ellipse at 80% 35%, rgba(255,143,207,.18) 0 24px, transparent 25px),
+        radial-gradient(ellipse at 45% 75%, rgba(40,20,70,.38) 0 20px, transparent 21px) !important;
+    opacity: .5 !important;
+}
+
+body::after {
+    color: rgba(201,140,255,.45) !important;
+    text-shadow:
+        90px 60px rgba(255,143,207,.38),
+        240px 130px rgba(124,77,255,.36),
+        420px 40px rgba(255,255,255,.32),
+        620px 170px rgba(201,140,255,.34),
+        820px 85px rgba(255,143,207,.32) !important;
+}
+
+.site-header h1,
+.character-header h1,
+.character-card h2,
+.quick-facts h2,
+.quick-facts h3,
+.content-card h2,
+.section-title h2,
+.folder-heading h2,
+.relationship-card h3,
+.relationship-type,
+.relationship-card a,
+.character-count,
+.image-title,
+.creator-kicker,
+.creator-profile-info h2,
+.creator-mini-grid strong,
+.folder-arrow,
+.companion-facts-card h2,
+.companion-summary-card h2,
+.companion-facts-grid strong,
+body.layout-dashboard .dashboard-quick-card strong {
+    color: var(--luna-accent) !important;
+}
+
+.tagline,
+.character-header p,
+.character-card p,
+.loading,
+.content-card p,
+.relationship-card p,
+.quick-facts,
+.quick-facts p,
+.quick-facts strong,
+.folder-heading span,
+.creator-bio,
+.creator-mini-grid p,
+.companion-facts-grid p,
+.companion-summary-card p,
+.image-card p {
+    color: var(--luna-muted) !important;
+}
+
+.hub-description,
+.character-card,
+.profile-card,
+.quick-facts,
+.content-card,
+.relationship-card,
+.folder-heading,
+.admin-generator,
+.creator-profile-card,
+.creator-mini-grid div,
+.world-title-card,
+.world-quick-card,
+.world-map-card,
+.companion-image-card,
+.companion-facts-card,
+.companion-summary-card,
+.section-title {
+    background: var(--luna-bg-card) !important;
+    border: 1px solid var(--luna-border) !important;
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.42),
+        0 0 24px rgba(124,77,255,.12) !important;
+    backdrop-filter: blur(16px) !important;
+}
+
+.character-card:hover,
+.content-card:hover,
+.relationship-card:hover,
+.folder-heading:hover {
+    background: var(--luna-bg-card-strong) !important;
+    box-shadow:
+        0 14px 36px rgba(0,0,0,.5),
+        0 0 28px rgba(201,140,255,.2),
+        0 0 18px rgba(255,143,207,.12) !important;
+}
+
+.back-button,
+.profile-nav a,
+.tab-button,
+.reveal-button,
+.admin-generator button,
+.wiki-links a {
+    color: var(--luna-text) !important;
+    background: rgba(24, 13, 38, .78) !important;
+    border: 1px solid var(--luna-border) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.28) !important;
+}
+
+.back-button:hover,
+.profile-nav a:hover,
+.tab-button:hover,
+.tab-button.active,
+.reveal-button:hover,
+.admin-generator button:hover,
+.wiki-links a:hover {
+    color: #fff !important;
+    background: linear-gradient(135deg, #2b123f, #7c4dff, #c98cff) !important;
+    box-shadow:
+        0 0 18px rgba(201,140,255,.32),
+        0 0 26px rgba(255,143,207,.18) !important;
+}
+
+#searchInput,
+.admin-generator input,
+.admin-generator textarea {
+    color: var(--luna-text) !important;
+    background: rgba(14, 8, 24, .82) !important;
+    border: 1px solid var(--luna-border) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3) !important;
+}
+
+#searchInput::placeholder,
+.admin-generator input::placeholder,
+.admin-generator textarea::placeholder {
+    color: rgba(234, 223, 255, .52) !important;
+}
+
+.character-card img,
+.main-ref,
+.image-card img,
+.relationship-preview-card img,
+.creator-avatar,
+.world-icon,
+.companion-image,
+.dashboard-main-ref {
+    background: rgba(12, 7, 20, .9) !important;
+    border-color: rgba(201,140,255,.55) !important;
+    box-shadow:
+        0 0 22px rgba(201,140,255,.22),
+        0 0 35px rgba(255,143,207,.12) !important;
+}
+
+.tag,
+.creator-pills span,
+.relationship-preview-card .relationship-type,
+.artist-pill,
+.base-pill,
+.designer-pill,
+.colorist-pill,
+.commissioner-pill,
+.gift-pill,
+.image-credit-pill {
+    color: var(--luna-text) !important;
+    background: var(--luna-tag) !important;
+    border: 1px solid var(--luna-border) !important;
+}
+
+.artist-pill { background: linear-gradient(135deg, #4b183f, #27142f) !important; }
+.base-pill { background: linear-gradient(135deg, #1b2854, #160d24) !important; }
+.designer-pill { background: linear-gradient(135deg, #3d2465, #160d24) !important; }
+.colorist-pill { background: linear-gradient(135deg, #173a45, #160d24) !important; }
+.commissioner-pill { background: linear-gradient(135deg, #4a2e19, #160d24) !important; }
+.gift-pill { background: linear-gradient(135deg, #4b2030, #160d24) !important; }
+
+.lightbox {
+    background: rgba(5, 3, 10, .92) !important;
+}
+
+.lightbox-close {
+    color: var(--luna-text) !important;
+    background: rgba(24, 13, 38, .9) !important;
+    border: 1px solid var(--luna-border) !important;
+}
+
+.nsfw-overlay {
+    background: rgba(9, 6, 17, .78) !important;
+}
+
+.nsfw-overlay small {
+    color: var(--luna-accent) !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0717 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#7c4dff, #c98cff, #ff8fcf) !important;
+}
+
+body.layout-minimal {
+    background: #100818 !important;
+}
+
+body.layout-minimal .profile-card,
+body.layout-minimal .content-card,
+body.layout-minimal .section-title,
+body.layout-minimal .quick-facts {
+    background: rgba(24, 13, 38, .75) !important;
+    border: 1px solid var(--luna-border) !important;
+}
+
+.watermarked-image::after,
+.lightbox::after {
+    opacity: .18 !important;
+    filter: hue-rotate(235deg) saturate(1.3) brightness(.9) !important;
+}
+
