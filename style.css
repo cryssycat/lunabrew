@@ -2133,3 +2133,295 @@ body.layout-minimal .quick-facts {
     filter: hue-rotate(235deg) saturate(1.3) brightness(.9) !important;
 }
 
+
+
+/* ==========================================
+   EMPTY-TAB + REORGANIZED DASHBOARD SUPPORT
+   For Star/Luna character pages
+========================================== */
+
+/* JS hides empty tabs inline. This makes sure hidden buttons stay hidden. */
+.tab-button[style*="display: none"] {
+    display: none !important;
+}
+
+/* Reorganized overview shell */
+body.layout-dashboard #overview .content-grid {
+    display: none !important;
+}
+
+#overview.active .dashboard-overview-grid,
+body.layout-dashboard #overview.active .dashboard-overview-grid {
+    display: grid !important;
+}
+
+body.layout-dashboard .profile-dashboard-content {
+    max-width: 1180px !important;
+    width: 100% !important;
+}
+
+body.layout-dashboard #overview.active .dashboard-overview-grid {
+    grid-template-columns: 260px minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+        "image intro intro"
+        "quick summary summary"
+        "quick character personal" !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+}
+
+body.layout-dashboard .dashboard-main-ref-card {
+    grid-area: image !important;
+}
+
+body.layout-dashboard .dashboard-intro-card {
+    grid-area: intro !important;
+}
+
+body.layout-dashboard .dashboard-summary-card {
+    grid-area: summary !important;
+}
+
+body.layout-dashboard .dashboard-quick-card {
+    grid-area: quick !important;
+}
+
+body.layout-dashboard .dashboard-character-card {
+    grid-area: character !important;
+}
+
+body.layout-dashboard .dashboard-personal-card {
+    grid-area: personal !important;
+}
+
+body.layout-dashboard .dashboard-main-ref-card,
+body.layout-dashboard .dashboard-intro-card,
+body.layout-dashboard .dashboard-summary-card,
+body.layout-dashboard .dashboard-quick-card,
+body.layout-dashboard .dashboard-character-card,
+body.layout-dashboard .dashboard-personal-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    border-radius: 24px;
+    padding: 24px;
+}
+
+body.layout-dashboard .dashboard-character-card,
+body.layout-dashboard .dashboard-personal-card {
+    display: flex !important;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 300px;
+}
+
+body.layout-dashboard .dashboard-intro-card,
+body.layout-dashboard .dashboard-summary-card {
+    min-height: 170px;
+}
+
+body.layout-dashboard .dashboard-main-ref {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center top;
+}
+
+body.layout-dashboard .dashboard-quick-card {
+    align-self: start !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
+}
+
+body.layout-dashboard .dashboard-quick-card p {
+    display: block;
+    line-height: 1.35;
+}
+
+body.layout-dashboard .dashboard-subsection {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.45);
+}
+
+body.layout-dashboard .dashboard-subsection:last-of-type {
+    border-bottom: none;
+}
+
+body.layout-dashboard .dashboard-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+body.layout-dashboard .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+    height: 100%;
+}
+
+body.layout-dashboard .dashboard-list-grid > div {
+    min-width: 0;
+}
+
+body.layout-dashboard .dashboard-character-card h3,
+body.layout-dashboard .dashboard-personal-card h3 {
+    color: #ff8fc3;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+body.layout-dashboard .dashboard-summary-card p,
+body.layout-dashboard .dashboard-intro-card p,
+body.layout-dashboard .dashboard-character-card p {
+    line-height: 1.7;
+}
+
+/* Familiar + Hearthling tabs */
+.companion-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.companion-top-row {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 22px;
+    align-items: stretch;
+    margin-bottom: 22px;
+}
+
+.companion-image-card,
+.companion-facts-card,
+.companion-summary-card {
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(255,255,255,.85);
+    border-radius: 34px;
+    padding: 28px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(170,170,220,.15);
+}
+
+.companion-image-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.companion-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 26px;
+    background: rgba(255,255,255,.65);
+    box-shadow: 0 0 25px rgba(255,170,215,.25);
+    display: block;
+}
+
+.companion-facts-card h2,
+.companion-summary-card h2 {
+    color: #ff8fc3;
+    margin-bottom: 16px;
+}
+
+.companion-facts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+    row-gap: 12px;
+}
+
+.companion-facts-grid p,
+.companion-summary-card p {
+    color: #66547f;
+    line-height: 1.65;
+}
+
+.companion-facts-grid strong {
+    color: #ff8fc3;
+}
+
+.companion-summary-card {
+    min-height: 260px;
+}
+
+.companion-summary-card p {
+    white-space: pre-line;
+}
+
+/* Keep Luna goth palette applied to the new companion/dashboard pieces if this file is gothic. */
+:root {
+    --luna-bg-card: rgba(24, 13, 38, .82);
+    --luna-border: rgba(198, 142, 255, .28);
+    --luna-text: #eadfff;
+    --luna-muted: #bda8d8;
+    --luna-accent: #c98cff;
+}
+
+.companion-image-card,
+.companion-facts-card,
+.companion-summary-card,
+body.layout-dashboard .dashboard-main-ref-card,
+body.layout-dashboard .dashboard-intro-card,
+body.layout-dashboard .dashboard-summary-card,
+body.layout-dashboard .dashboard-quick-card,
+body.layout-dashboard .dashboard-character-card,
+body.layout-dashboard .dashboard-personal-card {
+    background: var(--luna-bg-card, rgba(255,255,255,.72)) !important;
+    border: 1px solid var(--luna-border, rgba(255,255,255,.85)) !important;
+}
+
+.companion-facts-card h2,
+.companion-summary-card h2,
+.companion-facts-grid strong,
+body.layout-dashboard .dashboard-character-card h3,
+body.layout-dashboard .dashboard-personal-card h3,
+body.layout-dashboard .dashboard-quick-card strong {
+    color: var(--luna-accent, #ff8fc3) !important;
+}
+
+.companion-facts-grid p,
+.companion-summary-card p,
+body.layout-dashboard .dashboard-summary-card p,
+body.layout-dashboard .dashboard-intro-card p,
+body.layout-dashboard .dashboard-character-card p,
+body.layout-dashboard .dashboard-personal-card p {
+    color: var(--luna-muted, #66547f) !important;
+}
+
+@media (max-width: 900px) {
+    body.layout-dashboard #overview.active .dashboard-overview-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "image"
+            "intro"
+            "summary"
+            "quick"
+            "character"
+            "personal" !important;
+    }
+
+    body.layout-dashboard .dashboard-mini-grid,
+    body.layout-dashboard .dashboard-list-grid,
+    .companion-facts-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.layout-dashboard .dashboard-main-ref-card,
+    .companion-image-card {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .companion-top-row {
+        grid-template-columns: 1fr;
+    }
+}
+
