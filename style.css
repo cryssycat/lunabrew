@@ -2425,3 +2425,71 @@ body.layout-dashboard .dashboard-personal-card p {
     }
 }
 
+
+
+
+/* ======================================================
+   HARD VISUAL NOVEL LAYOUT (FINAL)
+====================================================== */
+
+body.layout-visual-novel .profile-card{display:none!important;}
+body.layout-visual-novel .profile-dashboard{
+display:block!important;
+width:min(1180px,94vw)!important;
+max-width:1180px!important;
+margin:0 auto 80px!important;
+}
+body.layout-visual-novel .profile-dashboard-content{width:100%!important;max-width:none!important;}
+body.layout-visual-novel .tabs{
+display:flex!important;
+flex-wrap:wrap!important;
+justify-content:center!important;
+position:static!important;
+width:100%!important;
+margin:18px auto 24px!important;
+gap:12px!important;
+}
+body.layout-visual-novel .tab-button{
+width:auto!important;
+min-width:110px!important;
+border-radius:16px!important;
+}
+body.layout-visual-novel #overview.active>.dashboard-overview-grid,
+body.layout-visual-novel .dashboard-overview-grid{
+display:grid!important;
+grid-template-columns:280px 1fr 1fr!important;
+grid-template-areas:
+"image image image"
+"quick intro character"
+"quick summary personal"!important;
+gap:18px!important;
+}
+body.layout-visual-novel .dashboard-main-ref-card{grid-area:image!important;}
+body.layout-visual-novel .dashboard-intro-card{grid-area:intro!important;}
+body.layout-visual-novel .dashboard-summary-card{grid-area:summary!important;}
+body.layout-visual-novel .dashboard-quick-card{grid-area:quick!important;}
+body.layout-visual-novel .dashboard-character-card{grid-area:character!important;}
+body.layout-visual-novel .dashboard-personal-card{grid-area:personal!important;}
+body.layout-visual-novel .dashboard-main-ref{
+width:100%!important;
+height:520px!important;
+object-fit:contain!important;
+aspect-ratio:auto!important;
+border-radius:18px!important;
+}
+@media(max-width:900px){
+body.layout-visual-novel #overview.active>.dashboard-overview-grid,
+body.layout-visual-novel .dashboard-overview-grid{
+grid-template-columns:1fr!important;
+grid-template-areas:
+"image"
+"quick"
+"intro"
+"summary"
+"character"
+"personal"!important;
+}
+body.layout-visual-novel .dashboard-main-ref{
+height:auto!important;
+}
+}
