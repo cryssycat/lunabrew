@@ -2599,3 +2599,148 @@ body.layout-visual-novel .dashboard-main-ref{
 height:auto!important;
 }
 }
+
+
+/* ==========================================
+   MINIMAL LAYOUT — CLEAN READING MODE
+========================================== */
+
+body.layout-minimal .profile-card {
+    display: none !important;
+}
+
+body.layout-minimal .profile-dashboard {
+    width: min(860px, 92vw) !important;
+    margin: 0 auto 80px !important;
+    display: block !important;
+}
+
+body.layout-minimal .profile-dashboard-content {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+body.layout-minimal .tabs {
+    position: static !important;
+    width: 100% !important;
+    margin: 24px auto 36px !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px 18px !important;
+}
+
+body.layout-minimal .tab-button {
+    width: auto !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 6px 2px !important;
+    color: #7c6a99 !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+body.layout-minimal .tab-button.active {
+    color: #ff8fc3 !important;
+    border-bottom-color: #ff8fc3 !important;
+}
+
+body.layout-minimal .dashboard-overview-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 26px !important;
+}
+
+body.layout-minimal .dashboard-main-ref-card,
+body.layout-minimal .dashboard-intro-card,
+body.layout-minimal .dashboard-summary-card,
+body.layout-minimal .dashboard-quick-card,
+body.layout-minimal .dashboard-character-card,
+body.layout-minimal .dashboard-personal-card,
+body.layout-minimal .content-card,
+body.layout-minimal .section-title,
+body.layout-minimal .companion-image-card,
+body.layout-minimal .companion-facts-card,
+body.layout-minimal .companion-summary-card {
+    display: block !important;
+    background: rgba(255,255,255,.45) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255,190,225,.35) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 26px !important;
+}
+
+body.layout-minimal .dashboard-main-ref-card h2 {
+    display: none !important;
+}
+
+body.layout-minimal .dashboard-main-ref {
+    width: min(620px, 100%) !important;
+    max-height: 720px !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 16px !important;
+}
+
+body.layout-minimal .dashboard-quick-card p {
+    display: grid !important;
+    grid-template-columns: 140px 1fr !important;
+    gap: 12px !important;
+    margin: 8px 0 !important;
+}
+
+body.layout-minimal .dashboard-character-card,
+body.layout-minimal .dashboard-personal-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+}
+
+body.layout-minimal .dashboard-mini-grid,
+body.layout-minimal .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px !important;
+}
+
+body.layout-minimal .gallery-grid,
+body.layout-minimal .relationship-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 22px !important;
+}
+
+body.layout-minimal .image-card img {
+    border-radius: 14px !important;
+}
+
+body.layout-minimal .companion-page {
+    max-width: 760px !important;
+}
+
+body.layout-minimal .companion-top-row {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.layout-minimal .companion-image {
+    width: min(420px, 100%) !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+}
+
+@media(max-width: 760px) {
+    body.layout-minimal .dashboard-mini-grid,
+    body.layout-minimal .dashboard-list-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.layout-minimal .dashboard-quick-card p {
+        grid-template-columns: 1fr !important;
+    }
+}
