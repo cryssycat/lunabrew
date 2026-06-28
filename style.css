@@ -20,11 +20,11 @@ body::before {
     position: fixed;
     inset: 0;
     background-image:
-        radial-gradient(rgba(255,255,255,.95) 1px, transparent 1px),
+         radial-gradient(rgba(255,255,255,.95) 1px, transparent 1px),
         radial-gradient(rgba(255,180,220,.45) 1px, transparent 1px),
         radial-gradient(ellipse at 20% 20%, rgba(255,255,255,.45) 0 18px, transparent 19px),
         radial-gradient(ellipse at 80% 35%, rgba(255,255,255,.38) 0 24px, transparent 25px),
-        radial-gradient(ellipse at 45% 75%, rgba(255,255,255,.32) 0 20px, transparent 21px);
+        radial-gradient(ellipse at 45% 75%, rgba(255,255,255,.32) 0 20px, transparent 21px)
     background-size: 70px 70px, 110px 110px, 320px 220px, 420px 260px, 360px 240px;
     background-position: 0 0, 35px 40px, 0 20px, 80px 0, 160px 80px;
     opacity: .55;
@@ -49,14 +49,14 @@ body::before {
 
 .tagline,
 .character-header p {
-    color: #7c6a99;
+   color: #7c6a99;
     margin-top: 10px;
 }
 
 .hub-description {
     max-width: 700px;
     margin: 25px auto 0;
-    background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.7);
     border: 1px solid rgba(255,255,255,.85);
     border-radius: 30px;
     padding: 25px;
@@ -84,6 +84,7 @@ body::before {
     box-shadow: 0 10px 25px rgba(170,170,220,.18);
 }
 
+
 #searchInput::placeholder {
     color: rgba(102,84,127,.6);
 }
@@ -91,9 +92,7 @@ body::before {
 #searchInput:focus {
     outline: none;
     border-color: rgba(255,143,195,.65);
-}
-
-.character-grid {
+}   .character-grid {
     width: 90%;
     max-width: 1400px;
     margin: auto;
@@ -155,13 +154,13 @@ body::before {
 
 .character-card p,
 .loading {
-    color: #7c6a99;
+     color: #7c6a99;
     text-align: center;
 }
 
 .back-button,
 .profile-nav a {
-    display: inline-block;
+ display: inline-block;
     padding: 12px 24px;
     border-radius: 999px;
     background: rgba(255,255,255,.72);
@@ -174,7 +173,7 @@ body::before {
 
 .back-button:hover,
 .profile-nav a:hover {
-    background: linear-gradient(135deg,#ffd7ea,#d9efff);
+       background: linear-gradient(135deg,#ffd7ea,#d9efff);
     transform: translateY(-2px);
 }
 
@@ -186,7 +185,7 @@ body::before {
 }
 
 .profile-card {
-    display: grid;
+     display: grid;
     grid-template-columns: 420px 1fr;
     gap: 40px;
     align-items: start;
@@ -287,7 +286,6 @@ body::before {
     color: #66547f;
     line-height: 1.6;
 }
-
 .tag-list {
     display: flex;
     flex-wrap: wrap;
@@ -298,7 +296,7 @@ body::before {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 999px;
-    background: #ffe7f3;
+ background: #ffe7f3;
     color: #66547f;
     border: 1px solid rgba(255,255,255,.9);
 }
@@ -322,9 +320,7 @@ body::before {
     border-radius: 20px;
     cursor: pointer;
     background: rgba(255,255,255,.65);
-}
-
-.image-card p {
+}.image-card p {
     text-align: center;
     margin-top: 10px;
     color: #7c6a99;
@@ -810,93 +806,344 @@ body.layout-visual-novel .dashboard-personal-card {
     }
 }
 
-body.layout-magazine .profile-page {
-    max-width: 1450px;
-}
+/* ==========================================
+   MAGAZINE LAYOUT — EDITORIAL SPREAD
+========================================== */
 
 body.layout-magazine .profile-card {
-    display: grid !important;
-    grid-template-columns: 420px 1fr;
-    gap: 30px;
-    align-items: stretch;
-}
-
-body.layout-magazine .main-ref {
-    height: 100%;
-    max-height: 560px;
-    object-fit: cover;
-}
-
-body.layout-magazine .quick-facts {
-    display: grid;
-    align-content: center;
-}
-
-body.layout-magazine .content-grid {
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 26px;
-}
-
-body.layout-magazine .wide-card {
-    grid-column: 1 / -1;
-}
-
-body.layout-magazine .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
-    justify-content: center;
-}
-
-body.layout-minimal {
-    background: #fff8fc !important;
-}
-
-body.layout-minimal::before {
     display: none !important;
 }
 
-body.layout-minimal .profile-card,
-body.layout-minimal .content-card,
-body.layout-minimal .section-title,
-body.layout-minimal .quick-facts {
-    background: rgba(255,255,255,.65) !important;
-    border: 1px solid rgba(255,255,255,.85) !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
+body.layout-magazine .profile-dashboard {
+    width: min(1280px, 94vw) !important;
+    margin: 0 auto 90px !important;
+    display: block !important;
+}
+
+body.layout-magazine .profile-dashboard-content {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+body.layout-magazine .tabs {
+    width: 100% !important;
+    margin: 22px auto 30px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    position: static !important;
+}
+
+body.layout-magazine .tab-button {
+    width: auto !important;
+    border-radius: 8px !important;
+    padding: 10px 18px !important;
+    text-transform: uppercase !important;
+    letter-spacing: .08em !important;
+    font-size: .82rem !important;
+}
+
+/* Editorial overview grid */
+body.layout-magazine #overview.active .dashboard-overview-grid,
+body.layout-magazine .dashboard-overview-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr) !important;
+    grid-template-areas:
+        "intro image"
+        "summary image"
+        "quick image"
+        "character personal" !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+/* Make all dashboard cards visible in magazine mode */
+body.layout-magazine .dashboard-main-ref-card,
+body.layout-magazine .dashboard-intro-card,
+body.layout-magazine .dashboard-summary-card,
+body.layout-magazine .dashboard-quick-card,
+body.layout-magazine .dashboard-character-card,
+body.layout-magazine .dashboard-personal-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    border-radius: 18px !important;
+    padding: 30px !important;
+}
+
+/* Grid placement */
+body.layout-magazine .dashboard-main-ref-card {
+    grid-area: image !important;
+}
+
+body.layout-magazine .dashboard-intro-card {
+    grid-area: intro !important;
+}
+
+body.layout-magazine .dashboard-summary-card {
+    grid-area: summary !important;
+}
+
+body.layout-magazine .dashboard-quick-card {
+    grid-area: quick !important;
+}
+
+body.layout-magazine .dashboard-character-card {
+    grid-area: character !important;
+}
+
+body.layout-magazine .dashboard-personal-card {
+    grid-area: personal !important;
+}
+
+/* Magazine cover image */
+body.layout-magazine .dashboard-main-ref-card {
+    min-height: 780px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+body.layout-magazine .dashboard-main-ref-card h2 {
+    display: none !important;
+}
+
+body.layout-magazine .dashboard-main-ref {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 760px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 14px !important;
+    display: block !important;
+}
+
+/* Editorial typography */
+body.layout-magazine .dashboard-intro-card h2,
+body.layout-magazine .dashboard-summary-card h2,
+body.layout-magazine .dashboard-quick-card h2,
+body.layout-magazine .dashboard-character-card h2,
+body.layout-magazine .dashboard-personal-card h2 {
+    text-transform: uppercase !important;
+    letter-spacing: .08em !important;
+    font-size: .9rem !important;
+    margin-bottom: 14px !important;
+}
+
+body.layout-magazine .dashboard-intro-card p {
+    font-size: 1.25rem !important;
+    line-height: 1.85 !important;
+}
+
+body.layout-magazine .dashboard-summary-card p {
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
+}
+
+body.layout-magazine .dashboard-quick-card {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 18px !important;
+}
+
+body.layout-magazine .dashboard-quick-card h2,
+body.layout-magazine .dashboard-tags-section {
+    grid-column: 1 / -1 !important;
+}
+
+body.layout-magazine .dashboard-quick-card p {
+    line-height: 1.4 !important;
+}
+
+body.layout-magazine .dashboard-character-card,
+body.layout-magazine .dashboard-personal-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+}
+
+body.layout-magazine .dashboard-mini-grid,
+body.layout-magazine .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+}
+
+/* Gallery feels like an editorial photo spread */
+body.layout-magazine .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 26px !important;
+}
+
+body.layout-magazine .image-card img {
+    height: 360px !important;
+    border-radius: 14px !important;
+}
+
+body.layout-magazine .image-title {
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+    font-size: .82rem !important;
+}
+
+/* Lore tab like article columns */
+body.layout-magazine #lore .content-grid {
+    display: grid !important;
+    grid-template-columns: .8fr 1.4fr !important;
+    gap: 24px !important;
+}
+
+body.layout-magazine #lore .content-card:has(#trivia) {
+    grid-column: 1 / -1 !important;
+}
+
+/* Familiar / Hearthling as magazine feature cards */
+body.layout-magazine .companion-page {
+    max-width: 1120px !important;
+}
+
+body.layout-magazine .companion-top-row {
+    display: grid !important;
+    grid-template-columns: 360px minmax(0, 1fr) !important;
+    gap: 26px !important;
+}
+
+body.layout-magazine .companion-image {
+    height: 420px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 14px !important;
+}
+
+body.layout-magazine .companion-facts-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px 22px !important;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    body.layout-magazine .dashboard-overview-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "image"
+            "intro"
+            "summary"
+            "quick"
+            "character"
+            "personal" !important;
+    }
+
+    body.layout-magazine .dashboard-main-ref-card {
+        min-height: auto !important;
+    }
+
+    body.layout-magazine .dashboard-main-ref {
+        min-height: 0 !important;
+        height: auto !important;
+        max-height: 720px !important;
+        object-fit: contain !important;
+    }
+
+    body.layout-magazine .dashboard-quick-card,
+    body.layout-magazine .dashboard-mini-grid,
+    body.layout-magazine .dashboard-list-grid,
+    body.layout-magazine .companion-facts-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.layout-magazine .companion-top-row {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* MINIMAL — MUTED SOFT DOSSIER */
+
+body.layout-minimal {
+    background:
+        radial-gradient(circle at top, rgba(120,110,150,.18), transparent 35%),
+        linear-gradient(180deg, #d8d1dc 0%, #c8c0cf 100%) !important;
+    color: #4d4658 !important;
+}
+
+body.layout-minimal .profile-dashboard {
+    width: min(980px, 92vw) !important;
+    margin: 0 auto 80px !important;
+    display: block !important;
 }
 
 body.layout-minimal .profile-card {
-    display: flex !important;
-    flex-direction: column;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body.layout-minimal .main-ref {
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+    display: none !important;
 }
 
 body.layout-minimal .tabs {
-    gap: 8px;
+    position: static !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 22px auto 28px !important;
 }
 
 body.layout-minimal .tab-button {
-    background: transparent !important;
-    border: 1px solid rgba(255,190,225,.5) !important;
+    width: auto !important;
+    border-radius: 999px !important;
+    padding: 9px 16px !important;
+    background: rgba(70,60,85,.18) !important;
+    border: 1px solid rgba(255,255,255,.3) !important;
+    color: #4d4658 !important;
+    box-shadow: none !important;
 }
 
 body.layout-minimal .tab-button.active {
-    background: rgba(255,215,234,.7) !important;
+    background: rgba(70,60,85,.34) !important;
+    color: #fff !important;
 }
 
-body.layout-minimal .content-grid {
-    grid-template-columns: 1fr;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+body.layout-minimal .dashboard-overview-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
 }
+
+body.layout-minimal .dashboard-main-ref-card,
+body.layout-minimal .dashboard-intro-card,
+body.layout-minimal .dashboard-summary-card,
+body.layout-minimal .dashboard-quick-card,
+body.layout-minimal .dashboard-character-card,
+body.layout-minimal .dashboard-personal-card,
+body.layout-minimal .content-card,
+body.layout-minimal .section-title {
+    display: block !important;
+    background: rgba(245,240,248,.42) !important;
+    border: 1px solid rgba(255,255,255,.36) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(55,45,70,.12) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 24px !important;
+}
+
+body.layout-minimal .dashboard-main-ref-card h2 {
+    display: none !important;
+}
+
+body.layout-minimal .dashboard-main-ref {
+    width: min(560px, 100%) !important;
+    max-height: 680px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 18px !important;
+}
+
+body.layout-minimal .dashboard-mini-grid,
+body.layout-minimal .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+}
+
 
 @media (max-width: 850px) {
     body.layout-default .profile-card,
@@ -1895,382 +2142,63 @@ body:not(.layout-dashboard) .dashboard-quick-card {
 }
 
 
-/* ==========================================
-   FAMILIAR + HEARTHLING COMPANION TABS
-========================================== */
-
-.companion-page {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.companion-top-row {
-    display: grid;
-    grid-template-columns: 260px minmax(0, 1fr);
-    gap: 22px;
-    align-items: stretch;
-    margin-bottom: 22px;
-}
-
-.companion-image-card,
-.companion-facts-card,
-.companion-summary-card {
-    background: rgba(255,255,255,.72);
-    border: 1px solid rgba(255,255,255,.85);
-    border-radius: 34px;
-    padding: 28px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(170,170,220,.15);
-}
-
-.companion-image-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.companion-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    height: auto;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 26px;
-    background: rgba(255,255,255,.65);
-    box-shadow: 0 0 25px rgba(255,170,215,.25);
-    display: block;
-}
-
-.companion-facts-card h2,
-.companion-summary-card h2 {
-    color: #ff8fc3;
-    margin-bottom: 16px;
-}
-
-.companion-facts-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 28px;
-    row-gap: 12px;
-}
-
-.companion-facts-grid p,
-.companion-summary-card p {
-    color: #66547f;
-    line-height: 1.65;
-}
-
-.companion-facts-grid strong {
-    color: #ff8fc3;
-}
-
-.companion-summary-card {
-    min-height: 260px;
-}
-
-.companion-summary-card p {
-    white-space: pre-line;
-}
-
-@media(max-width: 850px) {
-    .companion-top-row {
-        grid-template-columns: 1fr;
-    }
-
-    .companion-image-card {
-        max-width: 420px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .companion-facts-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 
 /* ==========================================
-   LUNAHUB GOTH COLOR OVERRIDE
-   Dark gothic moon palette
+   FINAL DASHBOARD GRID FIX
+   Works with the rebuilt clean characters/index.html
 ========================================== */
 
-:root {
-    --luna-bg-dark: #090611;
-    --luna-bg-mid: #160d24;
-    --luna-bg-card: rgba(24, 13, 38, .82);
-    --luna-bg-card-strong: rgba(34, 17, 52, .9);
-    --luna-border: rgba(198, 142, 255, .28);
-    --luna-border-soft: rgba(255, 255, 255, .12);
-    --luna-text: #eadfff;
-    --luna-muted: #bda8d8;
-    --luna-accent: #c98cff;
-    --luna-accent-2: #ff8fcf;
-    --luna-accent-3: #7c4dff;
-    --luna-tag: rgba(82, 39, 112, .82);
-}
-
-body {
-    color: var(--luna-text) !important;
-    background:
-        radial-gradient(circle at top, rgba(120, 73, 180, .28), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(255, 143, 207, .12), transparent 35%),
-        linear-gradient(180deg, #090611 0%, #12091f 45%, #1a0d2a 100%) !important;
-}
-
-body::before {
-    background-image:
-        radial-gradient(rgba(255,255,255,.45) 1px, transparent 1px),
-        radial-gradient(rgba(201,140,255,.38) 1px, transparent 1px),
-        radial-gradient(ellipse at 20% 20%, rgba(120,73,180,.24) 0 18px, transparent 19px),
-        radial-gradient(ellipse at 80% 35%, rgba(255,143,207,.18) 0 24px, transparent 25px),
-        radial-gradient(ellipse at 45% 75%, rgba(40,20,70,.38) 0 20px, transparent 21px) !important;
-    opacity: .5 !important;
-}
-
-body::after {
-    color: rgba(201,140,255,.45) !important;
-    text-shadow:
-        90px 60px rgba(255,143,207,.38),
-        240px 130px rgba(124,77,255,.36),
-        420px 40px rgba(255,255,255,.32),
-        620px 170px rgba(201,140,255,.34),
-        820px 85px rgba(255,143,207,.32) !important;
-}
-
-.site-header h1,
-.character-header h1,
-.character-card h2,
-.quick-facts h2,
-.quick-facts h3,
-.content-card h2,
-.section-title h2,
-.folder-heading h2,
-.relationship-card h3,
-.relationship-type,
-.relationship-card a,
-.character-count,
-.image-title,
-.creator-kicker,
-.creator-profile-info h2,
-.creator-mini-grid strong,
-.folder-arrow,
-.companion-facts-card h2,
-.companion-summary-card h2,
-.companion-facts-grid strong,
-body.layout-dashboard .dashboard-quick-card strong {
-    color: var(--luna-accent) !important;
-}
-
-.tagline,
-.character-header p,
-.character-card p,
-.loading,
-.content-card p,
-.relationship-card p,
-.quick-facts,
-.quick-facts p,
-.quick-facts strong,
-.folder-heading span,
-.creator-bio,
-.creator-mini-grid p,
-.companion-facts-grid p,
-.companion-summary-card p,
-.image-card p {
-    color: var(--luna-muted) !important;
-}
-
-.hub-description,
-.character-card,
-.profile-card,
-.quick-facts,
-.content-card,
-.relationship-card,
-.folder-heading,
-.admin-generator,
-.creator-profile-card,
-.creator-mini-grid div,
-.world-title-card,
-.world-quick-card,
-.world-map-card,
-.companion-image-card,
-.companion-facts-card,
-.companion-summary-card,
-.section-title {
-    background: var(--luna-bg-card) !important;
-    border: 1px solid var(--luna-border) !important;
-    box-shadow:
-        0 12px 32px rgba(0,0,0,.42),
-        0 0 24px rgba(124,77,255,.12) !important;
-    backdrop-filter: blur(16px) !important;
-}
-
-.character-card:hover,
-.content-card:hover,
-.relationship-card:hover,
-.folder-heading:hover {
-    background: var(--luna-bg-card-strong) !important;
-    box-shadow:
-        0 14px 36px rgba(0,0,0,.5),
-        0 0 28px rgba(201,140,255,.2),
-        0 0 18px rgba(255,143,207,.12) !important;
-}
-
-.back-button,
-.profile-nav a,
-.tab-button,
-.reveal-button,
-.admin-generator button,
-.wiki-links a {
-    color: var(--luna-text) !important;
-    background: rgba(24, 13, 38, .78) !important;
-    border: 1px solid var(--luna-border) !important;
-    box-shadow: 0 8px 22px rgba(0,0,0,.28) !important;
-}
-
-.back-button:hover,
-.profile-nav a:hover,
-.tab-button:hover,
-.tab-button.active,
-.reveal-button:hover,
-.admin-generator button:hover,
-.wiki-links a:hover {
-    color: #fff !important;
-    background: linear-gradient(135deg, #2b123f, #7c4dff, #c98cff) !important;
-    box-shadow:
-        0 0 18px rgba(201,140,255,.32),
-        0 0 26px rgba(255,143,207,.18) !important;
-}
-
-#searchInput,
-.admin-generator input,
-.admin-generator textarea {
-    color: var(--luna-text) !important;
-    background: rgba(14, 8, 24, .82) !important;
-    border: 1px solid var(--luna-border) !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,.3) !important;
-}
-
-#searchInput::placeholder,
-.admin-generator input::placeholder,
-.admin-generator textarea::placeholder {
-    color: rgba(234, 223, 255, .52) !important;
-}
-
-.character-card img,
-.main-ref,
-.image-card img,
-.relationship-preview-card img,
-.creator-avatar,
-.world-icon,
-.companion-image,
-.dashboard-main-ref {
-    background: rgba(12, 7, 20, .9) !important;
-    border-color: rgba(201,140,255,.55) !important;
-    box-shadow:
-        0 0 22px rgba(201,140,255,.22),
-        0 0 35px rgba(255,143,207,.12) !important;
-}
-
-.tag,
-.creator-pills span,
-.relationship-preview-card .relationship-type,
-.artist-pill,
-.base-pill,
-.designer-pill,
-.colorist-pill,
-.commissioner-pill,
-.gift-pill,
-.image-credit-pill {
-    color: var(--luna-text) !important;
-    background: var(--luna-tag) !important;
-    border: 1px solid var(--luna-border) !important;
-}
-
-.artist-pill { background: linear-gradient(135deg, #4b183f, #27142f) !important; }
-.base-pill { background: linear-gradient(135deg, #1b2854, #160d24) !important; }
-.designer-pill { background: linear-gradient(135deg, #3d2465, #160d24) !important; }
-.colorist-pill { background: linear-gradient(135deg, #173a45, #160d24) !important; }
-.commissioner-pill { background: linear-gradient(135deg, #4a2e19, #160d24) !important; }
-.gift-pill { background: linear-gradient(135deg, #4b2030, #160d24) !important; }
-
-.lightbox {
-    background: rgba(5, 3, 10, .92) !important;
-}
-
-.lightbox-close {
-    color: var(--luna-text) !important;
-    background: rgba(24, 13, 38, .9) !important;
-    border: 1px solid var(--luna-border) !important;
-}
-
-.nsfw-overlay {
-    background: rgba(9, 6, 17, .78) !important;
-}
-
-.nsfw-overlay small {
-    color: var(--luna-accent) !important;
-}
-
-::-webkit-scrollbar-track {
-    background: #0d0717 !important;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#7c4dff, #c98cff, #ff8fcf) !important;
-}
-
-body.layout-minimal {
-    background: #100818 !important;
-}
-
-body.layout-minimal .profile-card,
-body.layout-minimal .content-card,
-body.layout-minimal .section-title,
-body.layout-minimal .quick-facts {
-    background: rgba(24, 13, 38, .75) !important;
-    border: 1px solid var(--luna-border) !important;
-}
-
-.watermarked-image::after,
-.lightbox::after {
-    opacity: .18 !important;
-    filter: hue-rotate(235deg) saturate(1.3) brightness(.9) !important;
-}
-
-
-
-/* ==========================================
-   EMPTY-TAB + REORGANIZED DASHBOARD SUPPORT
-   For Star/Luna character pages
-========================================== */
-
-/* JS hides empty tabs inline. This makes sure hidden buttons stay hidden. */
-.tab-button[style*="display: none"] {
+body.layout-dashboard .profile-card {
     display: none !important;
 }
 
-/* Reorganized overview shell */
+body.layout-dashboard .profile-dashboard {
+    display: grid !important;
+    grid-template-columns: 170px minmax(0, 1fr) !important;
+    gap: 24px !important;
+    align-items: start !important;
+}
+
+body.layout-dashboard .profile-dashboard-content {
+    width: 100% !important;
+    max-width: 1180px !important;
+    min-width: 0 !important;
+}
+
+body.layout-dashboard .tabs {
+    margin: 0 !important;
+    width: 150px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    position: sticky !important;
+    top: 20px !important;
+}
+
+body.layout-dashboard .tab-button {
+    width: 100% !important;
+    border-radius: 22px !important;
+    padding: 14px 16px !important;
+}
+
+body.layout-dashboard .tab-panel {
+    width: 100% !important;
+}
+
+body.layout-dashboard #overview.active {
+    display: block !important;
+}
+
 body.layout-dashboard #overview .content-grid {
     display: none !important;
 }
 
-#overview.active .dashboard-overview-grid,
 body.layout-dashboard #overview.active .dashboard-overview-grid {
     display: grid !important;
-}
-
-body.layout-dashboard .profile-dashboard-content {
-    max-width: 1180px !important;
-    width: 100% !important;
-}
-
-body.layout-dashboard #overview.active .dashboard-overview-grid {
-    grid-template-columns: 260px minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-columns: 280px minmax(0, 1fr) minmax(0, 1fr) !important;
     grid-template-areas:
-        "image intro intro"
-        "quick summary summary"
+        "image intro summary"
         "quick character personal" !important;
     gap: 18px !important;
     align-items: stretch !important;
@@ -2309,199 +2237,116 @@ body.layout-dashboard .dashboard-personal-card {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    border-radius: 24px;
-    padding: 24px;
+    border-radius: 24px !important;
+    padding: 24px !important;
 }
 
 body.layout-dashboard .dashboard-character-card,
 body.layout-dashboard .dashboard-personal-card {
     display: flex !important;
-    flex-direction: column;
-    gap: 18px;
-    min-height: 300px;
+    flex-direction: column !important;
+    gap: 18px !important;
+}
+
+body.layout-dashboard .dashboard-main-ref {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
 }
 
 body.layout-dashboard .dashboard-intro-card,
 body.layout-dashboard .dashboard-summary-card {
-    min-height: 170px;
+    min-height: 240px !important;
 }
 
-body.layout-dashboard .dashboard-main-ref {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    height: auto !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    object-position: center top;
+body.layout-dashboard .dashboard-quick-card,
+body.layout-dashboard .dashboard-character-card,
+body.layout-dashboard .dashboard-personal-card {
+    min-height: 300px !important;
 }
 
 body.layout-dashboard .dashboard-quick-card {
-    align-self: start !important;
     display: flex !important;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: column !important;
+    gap: 8px !important;
 }
 
 body.layout-dashboard .dashboard-quick-card p {
-    display: block;
-    line-height: 1.35;
+    display: block !important;
+    line-height: 1.35 !important;
 }
 
 body.layout-dashboard .dashboard-subsection {
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255,255,255,.45);
+    padding-bottom: 14px !important;
+    border-bottom: 1px solid rgba(255,255,255,.45) !important;
 }
 
 body.layout-dashboard .dashboard-subsection:last-of-type {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
-body.layout-dashboard .dashboard-mini-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
-
+body.layout-dashboard .dashboard-mini-grid,
 body.layout-dashboard .dashboard-list-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 18px !important;
-    height: 100%;
+    gap: 16px !important;
 }
 
 body.layout-dashboard .dashboard-list-grid > div {
-    min-width: 0;
+    min-width: 0 !important;
 }
 
 body.layout-dashboard .dashboard-character-card h3,
 body.layout-dashboard .dashboard-personal-card h3 {
-    color: #ff8fc3;
-    margin-bottom: 8px;
-    font-size: 1rem;
+    color: #ff8fc3 !important;
+    margin-bottom: 8px !important;
+    font-size: 1rem !important;
 }
 
-body.layout-dashboard .dashboard-summary-card p,
 body.layout-dashboard .dashboard-intro-card p,
+body.layout-dashboard .dashboard-summary-card p,
 body.layout-dashboard .dashboard-character-card p {
-    line-height: 1.7;
+    line-height: 1.7 !important;
 }
 
-/* Familiar + Hearthling tabs */
-.companion-page {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+/* Hide empty tabs from rebuilt JS */
+.tab-button[style*="display: none"] {
+    display: none !important;
 }
 
-.companion-top-row {
-    display: grid;
-    grid-template-columns: 260px minmax(0, 1fr);
-    gap: 22px;
-    align-items: stretch;
-    margin-bottom: 22px;
+@media (max-width: 1000px) {
+    body.layout-dashboard #overview.active .dashboard-overview-grid {
+        grid-template-columns: 260px minmax(0, 1fr) !important;
+        grid-template-areas:
+            "image intro"
+            "quick summary"
+            "character personal" !important;
+    }
 }
 
-.companion-image-card,
-.companion-facts-card,
-.companion-summary-card {
-    background: rgba(255,255,255,.72);
-    border: 1px solid rgba(255,255,255,.85);
-    border-radius: 34px;
-    padding: 28px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(170,170,220,.15);
-}
+@media (max-width: 800px) {
+    body.layout-dashboard .profile-dashboard {
+        grid-template-columns: 1fr !important;
+    }
 
-.companion-image-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    body.layout-dashboard .tabs {
+        position: static !important;
+        width: auto !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        margin-bottom: 20px !important;
+    }
 
-.companion-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    height: auto;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 26px;
-    background: rgba(255,255,255,.65);
-    box-shadow: 0 0 25px rgba(255,170,215,.25);
-    display: block;
-}
+    body.layout-dashboard .tab-button {
+        width: auto !important;
+        border-radius: 999px !important;
+    }
 
-.companion-facts-card h2,
-.companion-summary-card h2 {
-    color: #ff8fc3;
-    margin-bottom: 16px;
-}
-
-.companion-facts-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 28px;
-    row-gap: 12px;
-}
-
-.companion-facts-grid p,
-.companion-summary-card p {
-    color: #66547f;
-    line-height: 1.65;
-}
-
-.companion-facts-grid strong {
-    color: #ff8fc3;
-}
-
-.companion-summary-card {
-    min-height: 260px;
-}
-
-.companion-summary-card p {
-    white-space: pre-line;
-}
-
-/* Keep Luna goth palette applied to the new companion/dashboard pieces if this file is gothic. */
-:root {
-    --luna-bg-card: rgba(24, 13, 38, .82);
-    --luna-border: rgba(198, 142, 255, .28);
-    --luna-text: #eadfff;
-    --luna-muted: #bda8d8;
-    --luna-accent: #c98cff;
-}
-
-.companion-image-card,
-.companion-facts-card,
-.companion-summary-card,
-body.layout-dashboard .dashboard-main-ref-card,
-body.layout-dashboard .dashboard-intro-card,
-body.layout-dashboard .dashboard-summary-card,
-body.layout-dashboard .dashboard-quick-card,
-body.layout-dashboard .dashboard-character-card,
-body.layout-dashboard .dashboard-personal-card {
-    background: var(--luna-bg-card, rgba(255,255,255,.72)) !important;
-    border: 1px solid var(--luna-border, rgba(255,255,255,.85)) !important;
-}
-
-.companion-facts-card h2,
-.companion-summary-card h2,
-.companion-facts-grid strong,
-body.layout-dashboard .dashboard-character-card h3,
-body.layout-dashboard .dashboard-personal-card h3,
-body.layout-dashboard .dashboard-quick-card strong {
-    color: var(--luna-accent, #ff8fc3) !important;
-}
-
-.companion-facts-grid p,
-.companion-summary-card p,
-body.layout-dashboard .dashboard-summary-card p,
-body.layout-dashboard .dashboard-intro-card p,
-body.layout-dashboard .dashboard-character-card p,
-body.layout-dashboard .dashboard-personal-card p {
-    color: var(--luna-muted, #66547f) !important;
-}
-
-@media (max-width: 900px) {
     body.layout-dashboard #overview.active .dashboard-overview-grid {
         grid-template-columns: 1fr !important;
         grid-template-areas:
@@ -2513,1380 +2358,919 @@ body.layout-dashboard .dashboard-personal-card p {
             "personal" !important;
     }
 
+    body.layout-dashboard .dashboard-main-ref-card {
+        max-width: 420px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
     body.layout-dashboard .dashboard-mini-grid,
-    body.layout-dashboard .dashboard-list-grid,
-    .companion-facts-grid {
+    body.layout-dashboard .dashboard-list-grid {
         grid-template-columns: 1fr !important;
     }
+}
 
-    body.layout-dashboard .dashboard-main-ref-card,
-    .companion-image-card {
-        max-width: 420px;
-        width: 100%;
-        margin: 0 auto;
+
+.relationship-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.relationship-image-wrap {
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.relationship-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.companion-page {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.companion-top-row {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.companion-image-card,
+.companion-facts-card,
+.companion-summary-card {
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 24px;
+    padding: 22px;
+}
+
+.companion-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+}
+
+.companion-facts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+
+.companion-summary-card {
+    margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+    .companion-top-row {
+        grid-template-columns: 1fr;
     }
 
-    .companion-top-row {
+    .companion-facts-grid {
         grid-template-columns: 1fr;
     }
 }
 
 
-
-
-/* ======================================================
-   HARD VISUAL NOVEL LAYOUT (FINAL)
-====================================================== */
-
-body.layout-visual-novel .profile-card{display:none!important;}
-body.layout-visual-novel .profile-dashboard{
-display:block!important;
-width:min(1180px,94vw)!important;
-max-width:1180px!important;
-margin:0 auto 80px!important;
-}
-body.layout-visual-novel .profile-dashboard-content{width:100%!important;max-width:none!important;}
-body.layout-visual-novel .tabs{
-display:flex!important;
-flex-wrap:wrap!important;
-justify-content:center!important;
-position:static!important;
-width:100%!important;
-margin:18px auto 24px!important;
-gap:12px!important;
-}
-body.layout-visual-novel .tab-button{
-width:auto!important;
-min-width:110px!important;
-border-radius:16px!important;
-}
-body.layout-visual-novel #overview.active>.dashboard-overview-grid,
-body.layout-visual-novel .dashboard-overview-grid{
-display:grid!important;
-grid-template-columns:280px 1fr 1fr!important;
-grid-template-areas:
-"image image image"
-"quick intro character"
-"quick summary personal"!important;
-gap:18px!important;
-}
-body.layout-visual-novel .dashboard-main-ref-card{grid-area:image!important;}
-body.layout-visual-novel .dashboard-intro-card{grid-area:intro!important;}
-body.layout-visual-novel .dashboard-summary-card{grid-area:summary!important;}
-body.layout-visual-novel .dashboard-quick-card{grid-area:quick!important;}
-body.layout-visual-novel .dashboard-character-card{grid-area:character!important;}
-body.layout-visual-novel .dashboard-personal-card{grid-area:personal!important;}
-body.layout-visual-novel .dashboard-main-ref{
-width:100%!important;
-height:520px!important;
-object-fit:contain!important;
-aspect-ratio:auto!important;
-border-radius:18px!important;
-}
-@media(max-width:900px){
-body.layout-visual-novel #overview.active>.dashboard-overview-grid,
-body.layout-visual-novel .dashboard-overview-grid{
-grid-template-columns:1fr!important;
-grid-template-areas:
-"image"
-"quick"
-"intro"
-"summary"
-"character"
-"personal"!important;
-}
-body.layout-visual-novel .dashboard-main-ref{
-height:auto!important;
-}
-}
-
-
 /* ==========================================
-   MINIMAL LAYOUT — CLEAN READING MODE
+   FINAL VISUAL NOVEL LAYOUT FIX
+   Backend option: Layout = visual-novel
 ========================================== */
 
-body.layout-minimal .profile-card {
+body.layout-visual-novel .profile-card {
     display: none !important;
 }
 
-body.layout-minimal .profile-dashboard {
-    width: min(860px, 92vw) !important;
+body.layout-visual-novel .profile-dashboard {
+    width: min(1180px, 94vw) !important;
+    max-width: 1180px !important;
     margin: 0 auto 80px !important;
     display: block !important;
 }
 
-body.layout-minimal .profile-dashboard-content {
+body.layout-visual-novel .profile-dashboard-content {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+body.layout-visual-novel .tabs {
+    width: 100% !important;
+    margin: 18px auto 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    position: static !important;
+    top: auto !important;
+}
+
+body.layout-visual-novel .tab-button {
+    width: auto !important;
+    min-width: 112px !important;
+    border-radius: 16px !important;
+    padding: 12px 18px !important;
+}
+
+body.layout-visual-novel .tab-panel {
+    width: 100% !important;
+}
+
+body.layout-visual-novel #overview.active {
+    display: block !important;
+}
+
+body.layout-visual-novel .dashboard-main-ref-card,
+body.layout-visual-novel .dashboard-intro-card,
+body.layout-visual-novel .dashboard-summary-card,
+body.layout-visual-novel .dashboard-quick-card,
+body.layout-visual-novel .dashboard-character-card,
+body.layout-visual-novel .dashboard-personal-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    border-radius: 24px !important;
+    padding: 24px !important;
+    min-width: 0 !important;
+}
+
+body.layout-visual-novel #overview.active .dashboard-overview-grid,
+body.layout-visual-novel .dashboard-overview-grid {
+    display: grid !important;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+        "image image image"
+        "quick intro character"
+        "quick summary personal" !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+}
+
+body.layout-visual-novel .dashboard-main-ref-card {
+    grid-area: image !important;
+    min-height: 430px !important;
+    overflow: hidden !important;
+}
+
+body.layout-visual-novel .dashboard-intro-card {
+    grid-area: intro !important;
+}
+
+body.layout-visual-novel .dashboard-summary-card {
+    grid-area: summary !important;
+}
+
+body.layout-visual-novel .dashboard-quick-card {
+    grid-area: quick !important;
+}
+
+body.layout-visual-novel .dashboard-character-card {
+    grid-area: character !important;
+}
+
+body.layout-visual-novel .dashboard-personal-card {
+    grid-area: personal !important;
+}
+
+body.layout-visual-novel .dashboard-main-ref-card h2 {
+    display: none !important;
+}
+
+body.layout-visual-novel .dashboard-main-ref {
+    width: 100% !important;
+    height: 520px !important;
+    max-height: 62vh !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.62) !important;
+}
+
+body.layout-visual-novel .dashboard-quick-card {
+    min-height: 360px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+body.layout-visual-novel .dashboard-intro-card,
+body.layout-visual-novel .dashboard-summary-card {
+    min-height: 160px !important;
+}
+
+body.layout-visual-novel .dashboard-character-card,
+body.layout-visual-novel .dashboard-personal-card {
+    min-height: 220px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+}
+
+body.layout-visual-novel .dashboard-mini-grid,
+body.layout-visual-novel .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+}
+
+body.layout-visual-novel .dashboard-subsection {
+    padding-bottom: 14px !important;
+    border-bottom: 1px solid rgba(255,255,255,.45) !important;
+}
+
+body.layout-visual-novel .dashboard-subsection:last-of-type {
+    border-bottom: none !important;
+}
+
+body.layout-visual-novel #overview .content-grid {
+    display: none !important;
+}
+
+@media (max-width: 950px) {
+    body.layout-visual-novel .dashboard-overview-grid {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-areas:
+            "image image"
+            "quick intro"
+            "quick summary"
+            "character personal" !important;
+    }
+
+    body.layout-visual-novel .dashboard-main-ref {
+        height: 420px !important;
+    }
+}
+
+@media (max-width: 760px) {
+    body.layout-visual-novel .dashboard-overview-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "image"
+            "quick"
+            "intro"
+            "summary"
+            "character"
+            "personal" !important;
+    }
+
+    body.layout-visual-novel .dashboard-main-ref {
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    body.layout-visual-novel .dashboard-mini-grid,
+    body.layout-visual-novel .dashboard-list-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
+
+/* ==========================================
+   MINI LAYOUT — COMPACT PROFILE
+========================================== */
+
+body.layout-mini .profile-card {
+    display: none !important;
+}
+
+body.layout-mini .profile-dashboard {
+    width: min(760px, 92vw) !important;
+    margin: 0 auto 70px !important;
+    display: block !important;
+}
+
+body.layout-mini .profile-dashboard-content {
     width: 100% !important;
     max-width: none !important;
 }
 
-body.layout-minimal .tabs {
-    position: static !important;
+body.layout-mini .tabs {
     width: 100% !important;
-    margin: 24px auto 36px !important;
+    margin: 18px auto 24px !important;
     display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    gap: 6px 18px !important;
+    gap: 8px !important;
+    position: static !important;
 }
 
-body.layout-minimal .tab-button {
+body.layout-mini .tab-button {
     width: auto !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 6px 2px !important;
-    color: #7c6a99 !important;
-    border-bottom: 2px solid transparent !important;
+    padding: 8px 14px !important;
+    border-radius: 999px !important;
+    font-size: .85rem !important;
 }
 
-body.layout-minimal .tab-button.active {
-    color: #ff8fc3 !important;
-    border-bottom-color: #ff8fc3 !important;
-}
-
-body.layout-minimal .dashboard-overview-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 26px !important;
-}
-
-body.layout-minimal .dashboard-main-ref-card,
-body.layout-minimal .dashboard-intro-card,
-body.layout-minimal .dashboard-summary-card,
-body.layout-minimal .dashboard-quick-card,
-body.layout-minimal .dashboard-character-card,
-body.layout-minimal .dashboard-personal-card,
-body.layout-minimal .content-card,
-body.layout-minimal .section-title,
-body.layout-minimal .companion-image-card,
-body.layout-minimal .companion-facts-card,
-body.layout-minimal .companion-summary-card {
-    display: block !important;
-    background: rgba(255,255,255,.45) !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(255,190,225,.35) !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    border-radius: 0 !important;
-    padding: 0 0 26px !important;
-}
-
-body.layout-minimal .dashboard-main-ref-card h2 {
+/* Only show the important overview pieces */
+body.layout-mini .dashboard-intro-card,
+body.layout-mini .dashboard-summary-card,
+body.layout-mini .dashboard-character-card,
+body.layout-mini .dashboard-personal-card {
     display: none !important;
 }
 
-body.layout-minimal .dashboard-main-ref {
-    width: min(620px, 100%) !important;
-    max-height: 720px !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    object-fit: contain !important;
+body.layout-mini #overview.active .dashboard-overview-grid,
+body.layout-mini .dashboard-overview-grid {
+    display: grid !important;
+    grid-template-columns: 220px minmax(0, 1fr) !important;
+    grid-template-areas:
+        "image quick" !important;
+    gap: 18px !important;
+    align-items: start !important;
+}
+
+body.layout-mini .dashboard-main-ref-card {
+    grid-area: image !important;
     display: block !important;
-    margin: 0 auto !important;
-    border-radius: 16px !important;
+    padding: 18px !important;
+    border-radius: 22px !important;
 }
 
-body.layout-minimal .dashboard-quick-card p {
-    display: grid !important;
-    grid-template-columns: 140px 1fr !important;
-    gap: 12px !important;
-    margin: 8px 0 !important;
+body.layout-mini .dashboard-main-ref-card h2 {
+    display: none !important;
 }
 
-body.layout-minimal .dashboard-character-card,
-body.layout-minimal .dashboard-personal-card {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 22px !important;
-}
-
-body.layout-minimal .dashboard-mini-grid,
-body.layout-minimal .dashboard-list-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 22px !important;
-}
-
-body.layout-minimal .gallery-grid,
-body.layout-minimal .relationship-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: 22px !important;
-}
-
-body.layout-minimal .image-card img {
+body.layout-mini .dashboard-main-ref {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center top !important;
     border-radius: 14px !important;
 }
 
-body.layout-minimal .companion-page {
-    max-width: 760px !important;
-}
-
-body.layout-minimal .companion-top-row {
+body.layout-mini .dashboard-quick-card {
+    grid-area: quick !important;
     display: flex !important;
     flex-direction: column !important;
+    gap: 6px !important;
+    padding: 20px !important;
+    border-radius: 22px !important;
 }
 
-body.layout-minimal .companion-image {
-    width: min(420px, 100%) !important;
-    margin: 0 auto !important;
-    object-fit: contain !important;
-}
-
-@media(max-width: 760px) {
-    body.layout-minimal .dashboard-mini-grid,
-    body.layout-minimal .dashboard-list-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    body.layout-minimal .dashboard-quick-card p {
-        grid-template-columns: 1fr !important;
-    }
-}
-
-/* ==========================================DASHBOARD CHARACTER LAYOUTBackend option: Layout = Dashboard========================================== */
-body.layout-dashboard .profile-page {
-max-width: 1450px;
-}
-body.layout-dashboard .profile-card {
-display: none !important;
-}
-body.layout-dashboard .profile-dashboard {
-display: grid;
-grid-template-columns: 170px minmax(0, 1fr);
-gap: 24px;
-align-items: start;
-}
-body.layout-dashboard .profile-dashboard-content {
-min-width: 0;
-}
-body.layout-dashboard .tabs {
-margin: 0;
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-justify-content: flex-start;
-gap: 12px;
-position: sticky;
-top: 20px;
-}
-body.layout-dashboard .tab-button {
-width: 100%;
-text-align: center;
-border-radius: 22px;
-padding: 14px 16px;
-}
-body.layout-dashboard .tab-panel {
-width: 100%;
-}
-body.layout-dashboard #overview .content-grid {
-display: grid;
-grid-template-columns: 280px minmax(0, 1fr) minmax(260px, 360px);
-grid-template-areas:"image intro intro""quick personality quote""quick design lore""likes dislikes trivia""hobbies fears trivia""mbti theme trivia";
-gap: 22px;
-align-items: stretch;
-}
-body.layout-dashboard .dashboard-main-ref-card {
-grid-area: image;
-}
-body.layout-dashboard .dashboard-intro-card {
-grid-area: intro;
-}
-body.layout-dashboard .dashboard-quick-card {
-grid-area: quick;
-}
-body.layout-dashboard .dashboard-summary-card {
-grid-area: summary;
-}
-body.layout-dashboard #overview .content-card:has(#personality) {
-grid-area: personality;
-}
-body.layout-dashboard #overview .content-card:has(#designNotes) {
-grid-area: design;
-}
-body.layout-dashboard #overview .content-card:has(#likes) {
-grid-area: likes;
-}
-body.layout-dashboard #overview .content-card:has(#dislikes) {
-grid-area: dislikes;
-}
-body.layout-dashboard #overview .content-card:has(#hobbies) {
-grid-area: hobbies;
-}
-body.layout-dashboard #overview .content-card:has(#fears) {
-grid-area: fears;
-}
-body.layout-dashboard #overview .content-card:has(#mbti) {
-grid-area: mbti;
-}
-body.layout-dashboard #overview .content-card:has(#themeSong) {
-grid-area: theme;
-}
-body.layout-dashboard .dashboard-main-ref {
-width: 100%;
-height: 360px;
-object-fit: cover;
-object-position: center top;
-border-radius: 0px;
-background: rgba(255,255,255,.65);
-border: 1px solid rgba(255,255,255,.85);
-box-shadow: 0 0 25px rgba(255,170,215,.22);
-}
-body.layout-dashboard .dashboard-quick-card {
-display: flex;
-flex-direction: column;
-gap: 8px;
-}
-body.layout-dashboard .dashboard-quick-card strong {
-color: #ff8fc3;
-}
-body.layout-dashboard .wide-card {
-grid-column: auto;
-}
-body:not(.layout-dashboard) .dashboard-main-ref-card,body:not(.layout-dashboard) .dashboard-quick-card {
-display: none;
-}
-@media (max-width: 900px) {
-body.layout-dashboard .profile-dashboard {
-	grid-template-columns: 1fr;
-}
-body.layout-dashboard .tabs {
-	position: static;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 25px;
-}
-body.layout-dashboard .tab-button {
-	width: auto;
-	border-radius: 999px;
-}
-body.layout-dashboard #overview .content-grid {
-	grid-template-columns: 1fr;
-	grid-template-areas:"image""intro""quick""summary""personality""design""likes""dislikes""hobbies""fears""mbti""theme";
-}
-body.layout-dashboard .dashboard-main-ref {
-	width: 100%;
-	aspect-ratio: 1 / 1;
-	height: auto !important;
-	max-height: none !important;
-	object-fit: cover;
-	object-position: center top;
-}
-}
-body.layout-dashboard .dashboard-main-ref-card {
-align-self: start;
-}
-body.layout-dashboard .dashboard-quick-card {
-align-self: start;
-}
-/* Dashboard square main ref override */
-body.layout-dashboard .dashboard-main-ref-card {
-align-self: start;
-}
-body.layout-dashboard .dashboard-main-ref {
-width: 100%;
-aspect-ratio: 1 / 1;
-height: auto !important;
-max-height: none !important;
-object-fit: cover;
-object-position: center top;
-}
-body.layout-dashboard .dashboard-quick-card {
-align-self: start;
-}
-/* Final dashboard square ref + quick facts fix */
-body.layout-dashboard .dashboard-main-ref {
-width: 100%;
-aspect-ratio: 1 / 1;
-height: auto !important;
-max-height: none !important;
-object-fit: cover !important;
-object-position: center top;
-}
-body.layout-dashboard .dashboard-quick-card p {
-display: block;
-}
-/* ==========================================DASHBOARD POLISH + ART VALUE VISIBILITY========================================== */
-body.layout-dashboard .profile-dashboard {
-gap: 20px;
-}
-body.layout-dashboard .tabs {
-width: 150px;
-}
-body.layout-dashboard .tab-button {
-min-height: 44px;
-font-weight: 600;
-box-shadow: 0 8px 20px rgba(170,170,220,.12);
-}
-body.layout-dashboard .profile-dashboard-content {
-max-width: 1180px;
-}
-body.layout-dashboard #overview .content-grid {
-display: grid;
-grid-template-columns: 260px minmax(0, 1fr) minmax(240px, 340px);
-grid-template-areas:"image intro intro""quick personality summary""quick design summary""likes dislikes summary""hobbies fears summary""mbti theme summary";
-gap: 18px;
-align-items: stretch;
-}
-body.layout-dashboard .content-card,body.layout-dashboard .section-title,body.layout-dashboard .relationship-card {
-border-radius: 24px;
-padding: 24px;
-}
-body.layout-dashboard .dashboard-main-ref-card {
-grid-area: image;
-padding: 20px;
-}
-body.layout-dashboard .dashboard-main-ref {
-width: 100%;
-aspect-ratio: 1 / 1;
-height: auto !important;
-max-height: none !important;
-object-fit: cover !important;
-object-position: center top;
-border-radius: 0px;
-}
-body.layout-dashboard .dashboard-quick-card {
-grid-area: quick;
-align-self: start;
-display: flex;
-flex-direction: column;
-gap: 8px;
-}
-body.layout-dashboard .dashboard-quick-card p {
-line-height: 1.35;
-}
-body.layout-dashboard .dashboard-quick-card strong {
-color: #ff8fc3;
-}
-body.layout-dashboard .dashboard-intro-card {
-grid-area: intro;
-}
-body.layout-dashboard .dashboard-summary-card {
-grid-area: summary;
-}
-body.layout-dashboard #overview .content-card:has(#personality) {
-grid-area: personality;
-}
-body.layout-dashboard #overview .content-card:has(#designNotes) {
-grid-area: design;
-}
-body.layout-dashboard #overview .content-card:has(#likes) {
-grid-area: likes;
-}
-body.layout-dashboard #overview .content-card:has(#dislikes) {
-grid-area: dislikes;
-}
-body.layout-dashboard #overview .content-card:has(#hobbies) {
-grid-area: hobbies;
-}
-body.layout-dashboard #overview .content-card:has(#fears) {
-grid-area: fears;
-}
-body.layout-dashboard #overview .content-card:has(#mbti) {
-grid-area: mbti;
-}
-body.layout-dashboard #overview .content-card:has(#themeSong) {
-grid-area: theme;
-}
-body.layout-dashboard .wide-card {
-grid-column: auto;
-}
-/* Dashboard Lore tab: stack Quote > Lore > Trivia */
-body.layout-dashboard #lore .content-grid {
-display: flex !important;
-flex-direction: column !important;
-gap: 18px !important;
-max-width: 760px;
-}
-body.layout-dashboard #lore .content-card:has(#quotes) {
-order: 1;
-}
-body.layout-dashboard #lore .content-card:has(#loreText) {
-order: 2;
-}
-body.layout-dashboard #lore .content-card:has(#trivia) {
-order: 3;
-}
-body.layout-dashboard #lore .content-card {
-width: 100%;
-}
-body.layout-dashboard #lore .content-card:has(#loreText),body.layout-dashboard #lore .content-card:has(#trivia) {
-min-height: 150px;
-}
-body:not(.layout-dashboard) .dashboard-main-ref-card,body:not(.layout-dashboard) .dashboard-quick-card {
-display: none;
-}
-@media (max-width: 900px) {
-body.layout-dashboard .profile-dashboard {
-	grid-template-columns: 1fr;
-}
-body.layout-dashboard .tabs {
-	position: static;
-	width: auto;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 20px;
-}
-body.layout-dashboard .tab-button {
-	width: auto;
-	border-radius: 999px;
-}
-body.layout-dashboard #overview .content-grid {
-	grid-template-columns: 1fr;
-	grid-template-areas:"image""intro""quick""summary""personality""design""likes""dislikes""hobbies""fears""mbti""theme";
-}
-body.layout-dashboard #lore .content-grid {
-	max-width: none;
-}
-}
-/* ==========================================FINAL DASHBOARD GRID FIXWorks with the rebuilt clean characters/index.html========================================== */
-body.layout-dashboard .profile-card {
-display: none !important;
-}
-body.layout-dashboard .profile-dashboard {
-display: grid !important;
-grid-template-columns: 170px minmax(0, 1fr) !important;
-gap: 24px !important;
-align-items: start !important;
-}
-body.layout-dashboard .profile-dashboard-content {
-width: 100% !important;
-max-width: 1180px !important;
-min-width: 0 !important;
-}
-body.layout-dashboard .tabs {
-margin: 0 !important;
-width: 150px !important;
-display: flex !important;
-flex-direction: column !important;
-flex-wrap: nowrap !important;
-gap: 12px !important;
-position: sticky !important;
-top: 20px !important;
-}
-body.layout-dashboard .tab-button {
-width: 100% !important;
-border-radius: 22px !important;
-padding: 14px 16px !important;
-}
-body.layout-dashboard .tab-panel {
-width: 100% !important;
-}
-body.layout-dashboard #overview.active {
-display: block !important;
-}
-body.layout-dashboard #overview .content-grid {
-display: none !important;
-}
-body.layout-dashboard #overview.active .dashboard-overview-grid {
-display: grid !important;
-grid-template-columns: 280px minmax(0, 1fr) minmax(0, 1fr) !important;
-grid-template-areas:"image intro summary""quick character personal" !important;
-gap: 18px !important;
-align-items: stretch !important;
-}
-body.layout-dashboard .dashboard-main-ref-card {
-grid-area: image !important;
-}
-body.layout-dashboard .dashboard-intro-card {
-grid-area: intro !important;
-}
-body.layout-dashboard .dashboard-summary-card {
-grid-area: summary !important;
-}
-body.layout-dashboard .dashboard-quick-card {
-grid-area: quick !important;
-}
-body.layout-dashboard .dashboard-character-card {
-grid-area: character !important;
-}
-body.layout-dashboard .dashboard-personal-card {
-grid-area: personal !important;
-}
-body.layout-dashboard .dashboard-main-ref-card,body.layout-dashboard .dashboard-intro-card,body.layout-dashboard .dashboard-summary-card,body.layout-dashboard .dashboard-quick-card,body.layout-dashboard .dashboard-character-card,body.layout-dashboard .dashboard-personal-card {
-display: block !important;
-visibility: visible !important;
-opacity: 1 !important;
-border-radius: 24px !important;
-padding: 24px !important;
-}
-body.layout-dashboard .dashboard-character-card,body.layout-dashboard .dashboard-personal-card {
-display: flex !important;
-flex-direction: column !important;
-gap: 18px !important;
-}
-body.layout-dashboard .dashboard-main-ref {
-width: 100% !important;
-aspect-ratio: 1 / 1 !important;
-height: auto !important;
-max-height: none !important;
-object-fit: cover !important;
-object-position: center top !important;
-display: block !important;
-}
-body.layout-dashboard .dashboard-intro-card,body.layout-dashboard .dashboard-summary-card {
-min-height: 240px !important;
-}
-body.layout-dashboard .dashboard-quick-card,body.layout-dashboard .dashboard-character-card,body.layout-dashboard .dashboard-personal-card {
-min-height: 300px !important;
-}
-body.layout-dashboard .dashboard-quick-card {
-display: flex !important;
-flex-direction: column !important;
-gap: 8px !important;
-}
-body.layout-dashboard .dashboard-quick-card p {
-display: block !important;
-line-height: 1.35 !important;
-}
-body.layout-dashboard .dashboard-subsection {
-padding-bottom: 14px !important;
-border-bottom: 1px solid rgba(255,255,255,.45) !important;
-}
-body.layout-dashboard .dashboard-subsection:last-of-type {
-border-bottom: none !important;
-}
-body.layout-dashboard .dashboard-mini-grid,body.layout-dashboard .dashboard-list-grid {
-display: grid !important;
-grid-template-columns: 1fr 1fr !important;
-gap: 16px !important;
-}
-body.layout-dashboard .dashboard-list-grid > div {
-min-width: 0 !important;
-}
-body.layout-dashboard .dashboard-character-card h3,body.layout-dashboard .dashboard-personal-card h3 {
-color: #ff8fc3 !important;
-margin-bottom: 8px !important;
-font-size: 1rem !important;
-}
-body.layout-dashboard .dashboard-intro-card p,body.layout-dashboard .dashboard-summary-card p,body.layout-dashboard .dashboard-character-card p {
-line-height: 1.7 !important;
-}
-/* Hide empty tabs from rebuilt JS */
-.tab-button[style*="display: none"] {
-display: none !important;
-}
-@media (max-width: 1000px) {
-body.layout-dashboard #overview.active .dashboard-overview-grid {
-	grid-template-columns: 260px minmax(0, 1fr) !important;
-	grid-template-areas:"image intro""quick summary""character personal" !important;
-}
-}
-@media (max-width: 800px) {
-body.layout-dashboard .profile-dashboard {
-	grid-template-columns: 1fr !important;
-}
-body.layout-dashboard .tabs {
-	position: static !important;
-	width: auto !important;
-	flex-direction: row !important;
-	flex-wrap: wrap !important;
-	justify-content: center !important;
-	margin-bottom: 20px !important;
-}
-body.layout-dashboard .tab-button {
-	width: auto !important;
-	border-radius: 999px !important;
-}
-body.layout-dashboard #overview.active .dashboard-overview-grid {
-	grid-template-columns: 1fr !important;
-	grid-template-areas:"image""intro""summary""quick""character""personal" !important;
-}
-body.layout-dashboard .dashboard-main-ref-card {
-	max-width: 420px !important;
-	width: 100% !important;
-	margin: 0 auto !important;
-}
-body.layout-dashboard .dashboard-mini-grid,body.layout-dashboard .dashboard-list-grid {
-	grid-template-columns: 1fr !important;
-}
-}
-.relationship-card {
-display: flex;
-align-items: center;
-gap: 18px;
-}
-.relationship-image-wrap {
-width: 90px;
-height: 90px;
-flex: 0 0 90px;
-border-radius: 18px;
-overflow: hidden;
-}
-.relationship-image {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-.companion-page {
-max-width: 1100px;
-margin: 0 auto;
-}
-.companion-top-row {
-display: grid;
-grid-template-columns: 320px minmax(0, 1fr);
-gap: 24px;
-align-items: stretch;
-}
-.companion-image-card,.companion-facts-card,.companion-summary-card {
-background: rgba(255,255,255,.55);
-border: 1px solid rgba(255,255,255,.75);
-border-radius: 24px;
-padding: 22px;
-}
-.companion-image {
-width: 100%;
-max-height: 320px;
-object-fit: contain;
-display: block;
-}
-.companion-facts-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px 18px;
-}
-.companion-summary-card {
-margin-top: 24px;
-}
-@media (max-width: 800px) {
-.companion-top-row {
-	grid-template-columns: 1fr;
-}
-.companion-facts-grid {
-	grid-template-columns: 1fr;
-}
-}
-/* ==========================================FINAL VISUAL NOVEL LAYOUT FIXBackend option: Layout = visual-novel========================================== */
-body.layout-visual-novel .profile-card {
-display: none !important;
-}
-body.layout-visual-novel .profile-dashboard {
-width: min(1180px, 94vw) !important;
-max-width: 1180px !important;
-margin: 0 auto 80px !important;
-display: block !important;
-}
-body.layout-visual-novel .profile-dashboard-content {
-width: 100% !important;
-max-width: none !important;
-min-width: 0 !important;
-}
-body.layout-visual-novel .tabs {
-width: 100% !important;
-margin: 18px auto 24px !important;
-display: flex !important;
-flex-direction: row !important;
-flex-wrap: wrap !important;
-justify-content: center !important;
-align-items: center !important;
-gap: 12px !important;
-position: static !important;
-top: auto !important;
-}
-body.layout-visual-novel .tab-button {
-width: auto !important;
-min-width: 112px !important;
-border-radius: 16px !important;
-padding: 12px 18px !important;
-}
-body.layout-visual-novel .tab-panel {
-width: 100% !important;
-}
-body.layout-visual-novel #overview.active {
-display: block !important;
-}
-body.layout-visual-novel .dashboard-main-ref-card,body.layout-visual-novel .dashboard-intro-card,body.layout-visual-novel .dashboard-summary-card,body.layout-visual-novel .dashboard-quick-card,body.layout-visual-novel .dashboard-character-card,body.layout-visual-novel .dashboard-personal-card {
-display: block !important;
-visibility: visible !important;
-opacity: 1 !important;
-border-radius: 24px !important;
-padding: 24px !important;
-min-width: 0 !important;
-}
-body.layout-visual-novel #overview.active .dashboard-overview-grid,body.layout-visual-novel .dashboard-overview-grid {
-display: grid !important;
-grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) minmax(0, 1fr) !important;
-grid-template-areas:"image image image""quick intro character""quick summary personal" !important;
-gap: 18px !important;
-align-items: stretch !important;
-}
-body.layout-visual-novel .dashboard-main-ref-card {
-grid-area: image !important;
-min-height: 430px !important;
-overflow: hidden !important;
-}
-body.layout-visual-novel .dashboard-intro-card {
-grid-area: intro !important;
-}
-body.layout-visual-novel .dashboard-summary-card {
-grid-area: summary !important;
-}
-body.layout-visual-novel .dashboard-quick-card {
-grid-area: quick !important;
-}
-body.layout-visual-novel .dashboard-character-card {
-grid-area: character !important;
-}
-body.layout-visual-novel .dashboard-personal-card {
-grid-area: personal !important;
-}
-body.layout-visual-novel .dashboard-main-ref-card h2 {
-display: none !important;
-}
-body.layout-visual-novel .dashboard-main-ref {
-width: 100% !important;
-height: 520px !important;
-max-height: 62vh !important;
-aspect-ratio: auto !important;
-object-fit: contain !important;
-object-position: center center !important;
-display: block !important;
-border-radius: 18px !important;
-background: rgba(255,255,255,.62) !important;
-}
-body.layout-visual-novel .dashboard-quick-card {
-min-height: 360px !important;
-display: flex !important;
-flex-direction: column !important;
-gap: 8px !important;
-}
-body.layout-visual-novel .dashboard-intro-card,body.layout-visual-novel .dashboard-summary-card {
-min-height: 160px !important;
-}
-body.layout-visual-novel .dashboard-character-card,body.layout-visual-novel .dashboard-personal-card {
-min-height: 220px !important;
-display: flex !important;
-flex-direction: column !important;
-gap: 16px !important;
-}
-body.layout-visual-novel .dashboard-mini-grid,body.layout-visual-novel .dashboard-list-grid {
-display: grid !important;
-grid-template-columns: 1fr 1fr !important;
-gap: 16px !important;
-}
-body.layout-visual-novel .dashboard-subsection {
-padding-bottom: 14px !important;
-border-bottom: 1px solid rgba(255,255,255,.45) !important;
-}
-body.layout-visual-novel .dashboard-subsection:last-of-type {
-border-bottom: none !important;
-}
-body.layout-visual-novel #overview .content-grid {
-display: none !important;
-}
-@media (max-width: 950px) {
-body.layout-visual-novel .dashboard-overview-grid {
-	grid-template-columns: 1fr 1fr !important;
-	grid-template-areas:"image image""quick intro""quick summary""character personal" !important;
-}
-body.layout-visual-novel .dashboard-main-ref {
-	height: 420px !important;
-}
-}
-@media (max-width: 760px) {
-body.layout-visual-novel .dashboard-overview-grid {
-	grid-template-columns: 1fr !important;
-	grid-template-areas:"image""quick""intro""summary""character""personal" !important;
-}
-body.layout-visual-novel .dashboard-main-ref {
-	height: auto !important;
-	max-height: none !important;
-}
-body.layout-visual-novel .dashboard-mini-grid,body.layout-visual-novel .dashboard-list-grid {
-	grid-template-columns: 1fr !important;
-}
-}
-/* ==========================================MINI LAYOUT — COMPACT PROFILE========================================== */
-body.layout-mini .profile-card {
-display: none !important;
-}
-body.layout-mini .profile-dashboard {
-width: min(760px, 92vw) !important;
-margin: 0 auto 70px !important;
-display: block !important;
-}
-body.layout-mini .profile-dashboard-content {
-width: 100% !important;
-max-width: none !important;
-}
-body.layout-mini .tabs {
-width: 100% !important;
-margin: 18px auto 24px !important;
-display: flex !important;
-justify-content: center !important;
-flex-wrap: wrap !important;
-gap: 8px !important;
-position: static !important;
-}
-body.layout-mini .tab-button {
-width: auto !important;
-padding: 8px 14px !important;
-border-radius: 999px !important;
-font-size: .85rem !important;
-}
-/* Only show the important overview pieces */
-body.layout-mini .dashboard-intro-card,body.layout-mini .dashboard-summary-card,body.layout-mini .dashboard-character-card,body.layout-mini .dashboard-personal-card {
-display: none !important;
-}
-body.layout-mini #overview.active .dashboard-overview-grid,body.layout-mini .dashboard-overview-grid {
-display: grid !important;
-grid-template-columns: 220px minmax(0, 1fr) !important;
-grid-template-areas:"image quick" !important;
-gap: 18px !important;
-align-items: start !important;
-}
-body.layout-mini .dashboard-main-ref-card {
-grid-area: image !important;
-display: block !important;
-padding: 18px !important;
-border-radius: 22px !important;
-}
-body.layout-mini .dashboard-main-ref-card h2 {
-display: none !important;
-}
-body.layout-mini .dashboard-main-ref {
-width: 100% !important;
-aspect-ratio: 1 / 1 !important;
-height: auto !important;
-object-fit: cover !important;
-object-position: center top !important;
-border-radius: 14px !important;
-}
-body.layout-mini .dashboard-quick-card {
-grid-area: quick !important;
-display: flex !important;
-flex-direction: column !important;
-gap: 6px !important;
-padding: 20px !important;
-border-radius: 22px !important;
-}
 body.layout-mini .dashboard-quick-card h2 {
-font-size: 1.15rem !important;
-margin-bottom: 8px !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 8px !important;
 }
+
 body.layout-mini .dashboard-quick-card p {
-display: block !important;
-line-height: 1.35 !important;
-font-size: .95rem !important;
+    display: block !important;
+    line-height: 1.35 !important;
+    font-size: .95rem !important;
 }
+
 body.layout-mini .dashboard-tags-section {
-margin-top: 8px !important;
+    margin-top: 8px !important;
 }
+
 /* Hide tabs that are too text-heavy for Mini */
-body.layout-mini .tab-button[data-tab="favorites"],body.layout-mini .tab-button[data-tab="credits"],body.layout-mini .tab-button[data-tab="lore"],body.layout-mini .tab-button[data-tab="relationships"],body.layout-mini .tab-button[data-tab="familiar"],body.layout-mini .tab-button[data-tab="hearthling"] {
-display: none !important;
+body.layout-mini .tab-button[data-tab="favorites"],
+body.layout-mini .tab-button[data-tab="credits"],
+body.layout-mini .tab-button[data-tab="lore"],
+body.layout-mini .tab-button[data-tab="relationships"],
+body.layout-mini .tab-button[data-tab="familiar"],
+body.layout-mini .tab-button[data-tab="hearthling"] {
+    display: none !important;
 }
-body.layout-mini #favorites,body.layout-mini #credits,body.layout-mini #lore,body.layout-mini #relationships,body.layout-mini #familiar,body.layout-mini #hearthling {
-display: none !important;
+
+body.layout-mini #favorites,
+body.layout-mini #credits,
+body.layout-mini #lore,
+body.layout-mini #relationships,
+body.layout-mini #familiar,
+body.layout-mini #hearthling {
+    display: none !important;
 }
+
 /* Small gallery */
 body.layout-mini .gallery-grid {
-grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-gap: 14px !important;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    gap: 14px !important;
 }
+
 body.layout-mini .image-card img {
-height: 160px !important;
-border-radius: 14px !important;
+    height: 160px !important;
+    border-radius: 14px !important;
 }
+
 body.layout-mini .image-title {
-font-size: .8rem !important;
+    font-size: .8rem !important;
 }
+
 /* Keep Mature Gallery small too */
 body.layout-mini .nsfw-overlay {
-min-height: 160px !important;
+    min-height: 160px !important;
 }
+
 /* Mobile */
 @media(max-width: 700px) {
-body.layout-mini .dashboard-overview-grid {
-	grid-template-columns: 1fr !important;
-	grid-template-areas:"image""quick" !important;
+    body.layout-mini .dashboard-overview-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "image"
+            "quick" !important;
+    }
+
+    body.layout-mini .dashboard-main-ref-card {
+        max-width: 260px !important;
+        margin: 0 auto !important;
+    }
 }
-body.layout-mini .dashboard-main-ref-card {
-	max-width: 260px !important;
-	margin: 0 auto !important;
-}
-}
-/* ==========================================DOSSIER / ARCHIVE LAYOUT — VARIABLE THEMENotion: Layout = Dossier========================================== */
+
+/* ==========================================
+   DOSSIER / ARCHIVE LAYOUT — VARIABLE THEME
+   Notion: Layout = Dossier
+========================================== */
+
 body.layout-dossier {
---dossier-panel: var(--card-bg, rgba(255,255,255,.72));
---dossier-panel-soft: var(--card-bg-soft, rgba(255,255,255,.42));
---dossier-inner: var(--tag-bg, rgba(255,255,255,.35));
---dossier-border: var(--card-border, rgba(255,255,255,.85));
---dossier-border-soft: var(--soft-border, rgba(255,255,255,.45));
---dossier-text: var(--text-color, inherit);
---dossier-muted: var(--muted-color, currentColor);
---dossier-accent: var(--accent-color, #ff8fc3);
---dossier-shadow: var(--card-shadow, 0 10px 30px rgba(170,170,220,.15));
+    --dossier-panel: var(--card-bg, rgba(255,255,255,.72));
+    --dossier-panel-soft: var(--card-bg-soft, rgba(255,255,255,.42));
+    --dossier-inner: var(--tag-bg, rgba(255,255,255,.35));
+    --dossier-border: var(--card-border, rgba(255,255,255,.85));
+    --dossier-border-soft: var(--soft-border, rgba(255,255,255,.45));
+    --dossier-text: var(--text-color, inherit);
+    --dossier-muted: var(--muted-color, currentColor);
+    --dossier-accent: var(--accent-color, #ff8fc3);
+    --dossier-shadow: var(--card-shadow, 0 10px 30px rgba(170,170,220,.15));
 }
+
 body.layout-dossier .profile-card {
-display: none !important;
+    display: none !important;
 }
+
 body.layout-dossier .profile-dashboard {
-width: min(760px, 94vw) !important;
-margin: 0 auto 80px !important;
-display: block !important;
+    width: min(760px, 94vw) !important;
+    margin: 0 auto 80px !important;
+    display: block !important;
 }
+
 body.layout-dossier .profile-dashboard-content {
-width: 100% !important;
+    width: 100% !important;
 }
+
 body.layout-dossier .tabs {
-position: static !important;
-width: 100% !important;
-margin: 18px auto 26px !important;
-display: flex !important;
-justify-content: center !important;
-flex-wrap: wrap !important;
-gap: 8px !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 18px auto 26px !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
 }
+
 body.layout-dossier .tab-button {
-width: auto !important;
-border-radius: 6px !important;
-padding: 8px 14px !important;
-font-size: .8rem !important;
-text-transform: uppercase !important;
-letter-spacing: .12em !important;
-background: var(--dossier-panel-soft) !important;
-color: var(--dossier-text) !important;
-border: 1px solid var(--dossier-border) !important;
-box-shadow: none !important;
+    width: auto !important;
+    border-radius: 6px !important;
+    padding: 8px 14px !important;
+    font-size: .8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: .12em !important;
+    background: var(--dossier-panel-soft) !important;
+    color: var(--dossier-text) !important;
+    border: 1px solid var(--dossier-border) !important;
+    box-shadow: none !important;
 }
-body.layout-dossier .tab-button.active,body.layout-dossier .tab-button:hover {
-background: var(--dossier-inner) !important;
-color: var(--dossier-accent) !important;
+
+body.layout-dossier .tab-button.active,
+body.layout-dossier .tab-button:hover {
+    background: var(--dossier-inner) !important;
+    color: var(--dossier-accent) !important;
 }
+
 body.layout-dossier .dashboard-overview-grid {
-display: flex !important;
-flex-direction: column !important;
-gap: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
 }
-body.layout-dossier .dashboard-main-ref-card,body.layout-dossier .dashboard-intro-card,body.layout-dossier .dashboard-summary-card,body.layout-dossier .dashboard-quick-card,body.layout-dossier .dashboard-character-card,body.layout-dossier .dashboard-personal-card,body.layout-dossier .content-card,body.layout-dossier .section-title {
-display: block !important;
-background: var(--dossier-panel) !important;
-border: 1px solid var(--dossier-border) !important;
-border-radius: 10px !important;
-box-shadow: var(--dossier-shadow) !important;
-backdrop-filter: blur(14px) !important;
-padding: 24px !important;
-color: var(--dossier-text) !important;
+
+body.layout-dossier .dashboard-main-ref-card,
+body.layout-dossier .dashboard-intro-card,
+body.layout-dossier .dashboard-summary-card,
+body.layout-dossier .dashboard-quick-card,
+body.layout-dossier .dashboard-character-card,
+body.layout-dossier .dashboard-personal-card,
+body.layout-dossier .content-card,
+body.layout-dossier .section-title {
+    display: block !important;
+    background: var(--dossier-panel) !important;
+    border: 1px solid var(--dossier-border) !important;
+    border-radius: 10px !important;
+    box-shadow: var(--dossier-shadow) !important;
+    backdrop-filter: blur(14px) !important;
+    padding: 24px !important;
+    color: var(--dossier-text) !important;
 }
+
 /* INFO */
 body.layout-dossier .dashboard-intro-card {
-order: 1 !important;
+    order: 1 !important;
 }
+
 body.layout-dossier .dashboard-summary-card {
-order: 2 !important;
+    order: 2 !important;
 }
-body.layout-dossier .dashboard-intro-card h2,body.layout-dossier .dashboard-summary-card h2,body.layout-dossier .dashboard-quick-card h2,body.layout-dossier .dashboard-character-card h2,body.layout-dossier .dashboard-personal-card h2 {
-text-align: center !important;
-text-transform: uppercase !important;
-letter-spacing: .28em !important;
-color: var(--dossier-accent) !important;
-border-bottom: 1px solid var(--dossier-border-soft) !important;
-padding-bottom: 10px !important;
-margin-bottom: 18px !important;
+
+body.layout-dossier .dashboard-intro-card h2,
+body.layout-dossier .dashboard-summary-card h2,
+body.layout-dossier .dashboard-quick-card h2,
+body.layout-dossier .dashboard-character-card h2,
+body.layout-dossier .dashboard-personal-card h2 {
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: .28em !important;
+    color: var(--dossier-accent) !important;
+    border-bottom: 1px solid var(--dossier-border-soft) !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 18px !important;
 }
-body.layout-dossier .dashboard-intro-card p,body.layout-dossier .dashboard-summary-card p {
-line-height: 1.9 !important;
-color: var(--dossier-muted) !important;
+
+body.layout-dossier .dashboard-intro-card p,
+body.layout-dossier .dashboard-summary-card p {
+    line-height: 1.9 !important;
+    color: var(--dossier-muted) !important;
 }
+
 /* IMAGE */
 body.layout-dossier .dashboard-main-ref-card {
-order: 3 !important;
-padding: 16px !important;
+    order: 3 !important;
+    padding: 16px !important;
 }
+
 body.layout-dossier .dashboard-main-ref-card h2 {
-display: none !important;
+    display: none !important;
 }
+
 body.layout-dossier .dashboard-main-ref {
-width: 100% !important;
-height: auto !important;
-max-height: 680px !important;
-object-fit: contain !important;
-display: block !important;
-border: 6px solid var(--dossier-inner) !important;
-outline: 1px solid var(--dossier-border) !important;
-border-radius: 4px !important;
-background: var(--dossier-panel-soft) !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 680px !important;
+    object-fit: contain !important;
+    display: block !important;
+    border: 6px solid var(--dossier-inner) !important;
+    outline: 1px solid var(--dossier-border) !important;
+    border-radius: 4px !important;
+    background: var(--dossier-panel-soft) !important;
 }
+
 /* QUICK FACTS */
 body.layout-dossier .dashboard-quick-card {
-order: 4 !important;
-display: grid !important;
-grid-template-columns: 1fr 1fr !important;
-gap: 12px !important;
+    order: 4 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
 }
-body.layout-dossier .dashboard-quick-card h2,body.layout-dossier .dashboard-tags-section {
-grid-column: 1 / -1 !important;
+
+body.layout-dossier .dashboard-quick-card h2,
+body.layout-dossier .dashboard-tags-section {
+    grid-column: 1 / -1 !important;
 }
+
 body.layout-dossier .dashboard-quick-card p {
-background: var(--dossier-inner) !important;
-border: 1px solid var(--dossier-border-soft) !important;
-border-radius: 6px !important;
-padding: 12px !important;
-text-align: center !important;
-line-height: 1.4 !important;
-color: var(--dossier-text) !important;
+    background: var(--dossier-inner) !important;
+    border: 1px solid var(--dossier-border-soft) !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    color: var(--dossier-text) !important;
 }
+
 body.layout-dossier .dashboard-quick-card strong {
-display: block !important;
-color: var(--dossier-accent) !important;
-font-size: .75rem !important;
-text-transform: uppercase !important;
-letter-spacing: .08em !important;
+    display: block !important;
+    color: var(--dossier-accent) !important;
+    font-size: .75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: .08em !important;
 }
+
 /* CHARACTER NOTES */
 body.layout-dossier .dashboard-character-card {
-order: 5 !important;
+    order: 5 !important;
 }
+
 body.layout-dossier .dashboard-subsection {
-background: var(--dossier-inner) !important;
-border: 1px solid var(--dossier-border-soft) !important;
-border-radius: 6px !important;
-padding: 18px !important;
-margin-bottom: 14px !important;
-text-align: center !important;
+    background: var(--dossier-inner) !important;
+    border: 1px solid var(--dossier-border-soft) !important;
+    border-radius: 6px !important;
+    padding: 18px !important;
+    margin-bottom: 14px !important;
+    text-align: center !important;
 }
+
 body.layout-dossier .dashboard-subsection h3 {
-color: var(--dossier-accent) !important;
-text-transform: uppercase !important;
-letter-spacing: .14em !important;
-margin-bottom: 10px !important;
+    color: var(--dossier-accent) !important;
+    text-transform: uppercase !important;
+    letter-spacing: .14em !important;
+    margin-bottom: 10px !important;
 }
+
 body.layout-dossier .dashboard-subsection p {
-color: var(--dossier-muted) !important;
+    color: var(--dossier-muted) !important;
 }
+
 /* PERSONAL = EXTRA NOTES */
 body.layout-dossier .dashboard-personal-card {
-order: 6 !important;
+    order: 6 !important;
 }
+
 body.layout-dossier .dashboard-list-grid {
-display: grid !important;
-grid-template-columns: 1fr !important;
-gap: 14px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
 }
+
 body.layout-dossier .dashboard-list-grid > div {
-background: var(--dossier-inner) !important;
-border: 1px solid var(--dossier-border-soft) !important;
-border-radius: 6px !important;
-padding: 18px !important;
-text-align: center !important;
+    background: var(--dossier-inner) !important;
+    border: 1px solid var(--dossier-border-soft) !important;
+    border-radius: 6px !important;
+    padding: 18px !important;
+    text-align: center !important;
 }
+
 body.layout-dossier .dashboard-list-grid h3 {
-color: var(--dossier-accent) !important;
-text-transform: uppercase !important;
-letter-spacing: .14em !important;
-margin-bottom: 10px !important;
+    color: var(--dossier-accent) !important;
+    text-transform: uppercase !important;
+    letter-spacing: .14em !important;
+    margin-bottom: 10px !important;
 }
+
 /* TAGS */
 body.layout-dossier .tag {
-background: var(--dossier-panel-soft) !important;
-border: 1px solid var(--dossier-border-soft) !important;
-color: var(--dossier-text) !important;
-border-radius: 999px !important;
+    background: var(--dossier-panel-soft) !important;
+    border: 1px solid var(--dossier-border-soft) !important;
+    color: var(--dossier-text) !important;
+    border-radius: 999px !important;
 }
+
 /* GALLERY */
 body.layout-dossier .gallery-grid {
-grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-gap: 14px !important;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: 14px !important;
 }
+
 body.layout-dossier .image-card {
-background: var(--dossier-panel) !important;
-border: 1px solid var(--dossier-border) !important;
-border-radius: 8px !important;
-padding: 10px !important;
+    background: var(--dossier-panel) !important;
+    border: 1px solid var(--dossier-border) !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
 }
+
 body.layout-dossier .image-card img {
-height: 190px !important;
-border-radius: 4px !important;
-border: 4px solid var(--dossier-inner) !important;
-outline: 1px solid var(--dossier-border) !important;
+    height: 190px !important;
+    border-radius: 4px !important;
+    border: 4px solid var(--dossier-inner) !important;
+    outline: 1px solid var(--dossier-border) !important;
 }
+
 body.layout-dossier .image-title {
-color: var(--dossier-accent) !important;
-text-transform: uppercase !important;
-letter-spacing: .08em !important;
-font-size: .78rem !important;
+    color: var(--dossier-accent) !important;
+    text-transform: uppercase !important;
+    letter-spacing: .08em !important;
+    font-size: .78rem !important;
 }
+
 /* RELATIONSHIPS */
 body.layout-dossier .relationship-card {
-background: var(--dossier-panel) !important;
-border: 1px solid var(--dossier-border) !important;
-border-radius: 8px !important;
+    background: var(--dossier-panel) !important;
+    border: 1px solid var(--dossier-border) !important;
+    border-radius: 8px !important;
 }
-body.layout-dossier .relationship-type,body.layout-dossier .relationship-card h3,body.layout-dossier .relationship-card a {
-color: var(--dossier-accent) !important;
+
+body.layout-dossier .relationship-type,
+body.layout-dossier .relationship-card h3,
+body.layout-dossier .relationship-card a {
+    color: var(--dossier-accent) !important;
 }
+
 /* FAMILIAR / HEARTHLING */
-body.layout-dossier .companion-image-card,body.layout-dossier .companion-facts-card,body.layout-dossier .companion-summary-card {
-background: var(--dossier-panel) !important;
-border: 1px solid var(--dossier-border) !important;
-border-radius: 8px !important;
-box-shadow: var(--dossier-shadow) !important;
+body.layout-dossier .companion-image-card,
+body.layout-dossier .companion-facts-card,
+body.layout-dossier .companion-summary-card {
+    background: var(--dossier-panel) !important;
+    border: 1px solid var(--dossier-border) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--dossier-shadow) !important;
 }
-body.layout-dossier .companion-facts-card h2,body.layout-dossier .companion-summary-card h2,body.layout-dossier .companion-facts-grid strong {
-color: var(--dossier-accent) !important;
+
+body.layout-dossier .companion-facts-card h2,
+body.layout-dossier .companion-summary-card h2,
+body.layout-dossier .companion-facts-grid strong {
+    color: var(--dossier-accent) !important;
 }
-body.layout-dossier .companion-facts-grid p,body.layout-dossier .companion-summary-card p {
-color: var(--dossier-muted) !important;
+
+body.layout-dossier .companion-facts-grid p,
+body.layout-dossier .companion-summary-card p {
+    color: var(--dossier-muted) !important;
 }
+
 @media(max-width: 700px) {
-body.layout-dossier .dashboard-quick-card {
-	grid-template-columns: 1fr !important;
+    body.layout-dossier .dashboard-quick-card {
+        grid-template-columns: 1fr !important;
+    }
 }
-}
-/* ==========================================POKE LAYOUT — COLLECTIBLE CARD PROFILENotion: Layout = Poke========================================== */
+
+/* ==========================================
+   POKE LAYOUT — COLLECTIBLE CARD PROFILE
+   Notion: Layout = Poke
+========================================== */
+
 body.layout-poke .profile-card {
-display: none !important;
+    display: none !important;
 }
+
 body.layout-poke .profile-dashboard {
-width: min(620px, 94vw) !important;
-margin: 0 auto 80px !important;
-display: block !important;
+    width: min(620px, 94vw) !important;
+    margin: 0 auto 80px !important;
+    display: block !important;
 }
+
 body.layout-poke .profile-dashboard-content {
-width: 100% !important;
+    width: 100% !important;
 }
+
 body.layout-poke .tabs {
-position: static !important;
-width: 100% !important;
-margin: 18px auto 26px !important;
-display: flex !important;
-justify-content: center !important;
-flex-wrap: wrap !important;
-gap: 8px !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 18px auto 26px !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
 }
+
 body.layout-poke .tab-button {
-width: auto !important;
-padding: 7px 14px !important;
-border-radius: 999px !important;
+    width: auto !important;
+    padding: 7px 14px !important;
+    border-radius: 999px !important;
 }
+
 /* Main collectible card shell */
 body.layout-poke .dashboard-overview-grid {
-display: flex !important;
-flex-direction: column !important;
-gap: 0 !important;
-background: rgba(255,255,255,.72) !important;
-border: 4px solid rgba(255,255,255,.9) !important;
-border-radius: 30px !important;
-overflow: hidden !important;
-box-shadow:0 18px 45px rgba(120,90,150,.2),inset 0 1px rgba(255,255,255,.65) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    background: rgba(255,255,255,.72) !important;
+    border: 4px solid rgba(255,255,255,.9) !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    box-shadow:
+        0 18px 45px rgba(120,90,150,.2),
+        inset 0 1px rgba(255,255,255,.65) !important;
 }
+
 /* Visible sections */
-body.layout-poke .dashboard-main-ref-card,body.layout-poke .dashboard-quick-card,body.layout-poke .dashboard-character-card,body.layout-poke .dashboard-personal-card {
-display: block !important;
-visibility: visible !important;
-opacity: 1 !important;
-background: transparent !important;
-border: none !important;
-box-shadow: none !important;
-backdrop-filter: none !important;
+body.layout-poke .dashboard-main-ref-card,
+body.layout-poke .dashboard-quick-card,
+body.layout-poke .dashboard-character-card,
+body.layout-poke .dashboard-personal-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
+
 /* Hide story-heavy panels */
-body.layout-poke .dashboard-intro-card,body.layout-poke .dashboard-summary-card {
-display: none !important;
+body.layout-poke .dashboard-intro-card,
+body.layout-poke .dashboard-summary-card {
+    display: none !important;
 }
+
 /* Artwork */
 body.layout-poke .dashboard-main-ref-card {
-order: 1 !important;
-padding: 18px 18px 10px !important;
+    order: 1 !important;
+    padding: 18px 18px 10px !important;
 }
+
 body.layout-poke .dashboard-main-ref-card h2 {
-display: none !important;
+    display: none !important;
 }
+
 body.layout-poke .dashboard-main-ref {
-width: 100% !important;
-height: auto !important;
-max-height: 620px !important;
-aspect-ratio: 4 / 5 !important;
-object-fit: contain !important;
-object-position: center !important;
-border-radius: 18px !important;
-background: rgba(255,255,255,.35) !important;
-border: 2px solid rgba(255,255,255,.85) !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 620px !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.35) !important;
+    border: 2px solid rgba(255,255,255,.85) !important;
 }
+
 /* Stats / quick facts */
 body.layout-poke .dashboard-quick-card {
-order: 2 !important;
-margin: 10px 18px !important;
-padding: 18px !important;
-border-radius: 16px !important;
-background: rgba(255,255,255,.38) !important;
-border: 1px solid rgba(255,255,255,.78) !important;
+    order: 2 !important;
+    margin: 10px 18px !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,.38) !important;
+    border: 1px solid rgba(255,255,255,.78) !important;
 }
+
 body.layout-poke .dashboard-quick-card h2 {
-text-align: center !important;
-text-transform: uppercase !important;
-letter-spacing: .16em !important;
-margin-bottom: 12px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: .16em !important;
+    margin-bottom: 12px !important;
 }
+
 body.layout-poke .dashboard-quick-card p {
-display: grid !important;
-grid-template-columns: 120px 1fr !important;
-gap: 10px !important;
-margin: 7px 0 !important;
+    display: grid !important;
+    grid-template-columns: 120px 1fr !important;
+    gap: 10px !important;
+    margin: 7px 0 !important;
 }
+
 /* Abilities / character notes */
 body.layout-poke .dashboard-character-card {
-order: 3 !important;
-margin: 0 18px 10px !important;
-padding: 18px !important;
-border-radius: 16px !important;
-background: rgba(255,255,255,.32) !important;
-border: 1px solid rgba(255,255,255,.65) !important;
+    order: 3 !important;
+    margin: 0 18px 10px !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,.32) !important;
+    border: 1px solid rgba(255,255,255,.65) !important;
 }
+
 body.layout-poke .dashboard-character-card h2 {
-text-align: center !important;
-text-transform: uppercase !important;
-letter-spacing: .14em !important;
-margin-bottom: 12px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: .14em !important;
+    margin-bottom: 12px !important;
 }
+
 /* Flavor text */
 body.layout-poke .dashboard-personal-card {
-order: 4 !important;
-margin: 0 18px 18px !important;
-padding: 18px !important;
-border-radius: 16px !important;
-background: rgba(255,255,255,.26) !important;
-border: 1px solid rgba(255,255,255,.55) !important;
+    order: 4 !important;
+    margin: 0 18px 18px !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,.26) !important;
+    border: 1px solid rgba(255,255,255,.55) !important;
 }
+
 body.layout-poke .dashboard-personal-card h2 {
-text-align: center !important;
-text-transform: uppercase !important;
-letter-spacing: .14em !important;
-margin-bottom: 12px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: .14em !important;
+    margin-bottom: 12px !important;
 }
-body.layout-poke .dashboard-mini-grid,body.layout-poke .dashboard-list-grid {
-display: grid !important;
-grid-template-columns: 1fr 1fr !important;
-gap: 12px !important;
+
+body.layout-poke .dashboard-mini-grid,
+body.layout-poke .dashboard-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
 }
+
 body.layout-poke .dashboard-subsection {
-padding-bottom: 12px !important;
-margin-bottom: 12px !important;
-border-bottom: 1px solid rgba(255,255,255,.45) !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid rgba(255,255,255,.45) !important;
 }
+
 body.layout-poke .dashboard-subsection:last-of-type {
-border-bottom: none !important;
+    border-bottom: none !important;
 }
+
 /* Compact galleries */
 body.layout-poke .gallery-grid {
-grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
-gap: 14px !important;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    gap: 14px !important;
 }
+
 body.layout-poke .image-card img {
-height: 165px !important;
-object-fit: cover !important;
-border-radius: 14px !important;
+    height: 165px !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
 }
+
 body.layout-poke .nsfw-overlay {
-min-height: 165px !important;
+    min-height: 165px !important;
 }
+
 @media(max-width:650px) {
-body.layout-poke .dashboard-quick-card p,body.layout-poke .dashboard-mini-grid,body.layout-poke .dashboard-list-grid {
-	grid-template-columns: 1fr !important;
-}
+    body.layout-poke .dashboard-quick-card p,
+    body.layout-poke .dashboard-mini-grid,
+    body.layout-poke .dashboard-list-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
